@@ -3,6 +3,7 @@ import WhyInvest from '../sections/WhyInvest'
 import LatestProperties from '../sections/LatestProperties'
 import AboutUs from '../sections/AboutUs'
 import FeatureProperties from '../sections/FeatureProperties'
+import OurLocation from '../sections/OurLocation'
 
 const Home = () => {
     return (
@@ -12,6 +13,7 @@ const Home = () => {
             <LatestProperties />
             <AboutUs />
             <FeatureProperties />
+            <OurLocation />
         </>
     )
 }
