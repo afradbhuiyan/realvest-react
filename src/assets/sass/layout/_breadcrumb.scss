@@ -1,0 +1,49 @@
+/* ========================= Breadcrumb CSS Start ========================= */
+.custom--breadcrumb {
+  border-radius: 8px;
+  margin-bottom: 0px;
+
+  @include msm-screen {
+    padding: 6px 8px;
+  }
+
+  .breadcrumb-item {
+    color: hsl(var(--base));
+    text-align: center;
+    font-size: rem(16px);
+    font-weight: 500;
+    line-height: 100%;
+
+    @include msm-screen {
+      font-size: rem(14px);
+    }
+
+    &+.breadcrumb-item::before {
+      content: '/';
+      color: hsl(var(--white));
+    }
+
+    a {
+      color: hsl(var(--white));
+
+      i {
+        font-size: 1.125em;
+      }
+
+      &:has(i) {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+      }
+
+      &:hover,
+      &:focus {
+        outline: none;
+        box-shadow: none;
+      }
+    }
+  }
+
+}
+
+/* ========================= Breadcrumb CSS End =========================== */

@@ -1,0 +1,30 @@
+/* ========================= Our Partner CSS Start ========================= */
+.our-partner {
+    border-radius: var(--section-radius);
+    background-color: hsl(var(--white));
+
+    &-slider {
+        --slide-gap: 8px !important;
+
+        .slick-track {
+            align-items: center;
+        }
+
+        &__slide {
+            height: 100%;
+        }
+
+        &__logo {
+            width: 100%;
+            max-width: 190px;
+            display: block;
+            object-fit: contain;
+            margin-inline: auto;
+            border: 1px solid hsl(var(--border-color));
+            padding: 12px 24px;
+            border-radius: 12px;
+        }
+    }
+}
+
+/* ========================= Our Partner CSS End =========================== */

@@ -1,0 +1,433 @@
+/* ========================= Dropdown CSS Start ========================= */
+.dropdown {
+    $parent: &;
+    $lang: '.dropdown--lang';
+    $profile: '.dropdown--profile';
+    $action: '.dropdown--action';
+
+    @at-root {
+        #{$lang} {
+
+            #{$parent}-toggle {
+                font-size: rem(16px);
+                font-weight: 500;
+                line-height: 100%;
+                border-radius: 999px;
+                color: hsl(var(--white)/0.6);
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+                padding: 5px 10px 5px 5px;
+                border: 1px solid hsl(var(--border-color)/0.1);
+                background-color: hsl(var(--white)/0.05);
+                backdrop-filter: blur(12px);
+
+                @include msm-screen {
+                    font-size: rem(14px);
+                }
+
+
+                .icon {
+                    --size: 1.75em;
+                    width: var(--size);
+                    height: var(--size);
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 50%;
+                    background-color: hsl(var(--white)/0.1);
+                    backdrop-filter: blur(12px);
+                    flex-shrink: 0;
+
+                    svg {
+                        width: 50%;
+                        height: 50%;
+                    }
+                }
+
+                &::after {
+                    content: "\f107";
+                    font-family: "Line Awesome Free";
+                    font-weight: 900;
+                    margin-left: 0;
+                    border-top: none;
+                    border-right: none;
+                    border-left: none;
+                    font-size: 1rem;
+                }
+
+                &[aria-expanded="true"]::after {
+                    transform: rotate(180deg);
+                }
+
+                &:hover,
+                &:focus {
+                    outline: none;
+                    box-shadow: none;
+                    color: hsl(var(--white));
+                    border-color: hsl(var(--border-color)/0.2);
+                }
+            }
+
+            #{$parent}-menu {
+                min-width: 12rem;
+                overflow: hidden;
+                padding: 0;
+                border-radius: 8px;
+                border: 1px solid hsl(var(--border-color)/0.1);
+                background-color: hsl(var(--dark)/0.5);
+                backdrop-filter: blur(12px);
+
+                &.show {
+                    display: flex;
+                    flex-direction: column;
+                }
+            }
+
+            #{$parent}-item {
+                width: 100%;
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+                font-size: rem(16px);
+                font-weight: 500;
+                line-height: 120%;
+                color: hsl(var(--white)/0.6);
+                padding: 12px 16px;
+                transition: .3s ease;
+
+                @include msm-screen {
+                    font-size: rem(14px);
+                }
+
+                .lang-flag {
+                    --size: 1.25em;
+                    width: var(--size);
+                    height: var(--size);
+                    border-radius: 50%;
+                    display: block;
+                    object-fit: cover;
+                    flex-shrink: 0;
+                }
+
+                &:hover,
+                &:focus {
+                    outline: none;
+                    box-shadow: none;
+                    color: hsl(var(--base));
+                    background-color: transparent;
+                }
+
+                &.active {
+                    color: hsl(var(--base));
+                    background-color: hsl(var(--base)/0.1);
+
+                    &::after {
+                        content: '\f00c';
+                        font-family: 'Line Awesome Free';
+                        font-weight: 900;
+                        margin-left: auto;
+                        color: transparent;
+                        background-color: hsl(var(--base));
+                        background-clip: text;
+                    }
+                }
+            }
+        }
+    }
+
+    @at-root {
+        #{$profile} {
+            #{$parent}-toggle {
+                width: 190px;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                border: 1px solid #ffffff52;
+                background-color: #fff3;
+                backdrop-filter: blur(62px);
+                border-radius: 999px;
+                padding: 4px 16px 4px 4px;
+                transition: .3s ease;
+                text-align: left;
+                white-space: wrap;
+
+                @include msm-screen {
+                    width: unset;
+                    padding: 4px;
+                }
+
+                &::after {
+                    content: '\f107';
+                    border-top: none;
+                    border-right: none;
+                    border-left: none;
+                    font-weight: 900;
+                    font-family: 'Line Awesome Free';
+                    color: hsl(var(--white));
+                    font-size: rem(16px);
+                    margin-left: 0px;
+                    line-height: 100%;
+
+                    @include msm-screen {
+                        display: none;
+                    }
+                }
+
+                &[aria-expanded="true"] {
+                    &::after {
+                        content: '\f106';
+                    }
+                }
+
+                &__icon {
+                    --size: 38px;
+                    width: var(--size);
+                    height: var(--size);
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-shrink: 0;
+                    color: hsl(var(--dark));
+                    background-color: hsl(var(--base));
+
+                    @include msm-screen {
+                        --size: 30px;
+                    }
+
+                    @include xxsm-screen {
+                        --size: 24px;
+                    }
+
+                    svg {
+                        width: 50%;
+                        height: 50%;
+                    }
+                }
+
+                &__content {
+                    flex-grow: 1;
+
+                    @include msm-screen {
+                        display: none;
+                    }
+                }
+
+                &__name {
+                    font-size: rem(14px);
+                    font-weight: 500;
+                    color: hsl(var(--white));
+                    line-height: 100%;
+                    @include line-clamp(1);
+                    margin-bottom: 4px;
+                }
+
+                &__balance {
+                    font-size: rem(16px);
+                    font-weight: 600;
+                    color: hsl(var(--white));
+                    line-height: 100%;
+                    @include line-clamp(1);
+                }
+
+                &:focus {
+                    outline: none;
+                    box-shadow: none;
+                }
+            }
+
+            #{$parent}-menu {
+                min-width: 215px;
+                padding: 0px;
+                border-radius: 16px;
+                border: 1px solid hsl(var(--base)/0.05);
+                background-color: hsl(var(--base-two));
+                overflow: hidden;
+                transition: all .3s ease;
+                top: calc(100% + 6px);
+                right: 0px;
+                left: auto;
+                display: flex;
+                flex-direction: column;
+                visibility: hidden;
+                opacity: 0;
+                box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+                &.show {
+                    top: 100%;
+                    opacity: 1;
+                    visibility: visible;
+                }
+
+                &__header {
+                    margin-inline: 24px;
+                    padding-block: 12px;
+                    border-bottom: 1px solid hsl(var(--base)/0.1);
+                }
+
+                &__body {
+                    flex: 1 1 auto;
+                    max-height: 400px;
+                    scrollbar-width: thin;
+                    scrollbar-color: hsl(var(--white)/0.1) hsl(var(--white)/0.05);
+                    overflow-y: auto;
+                }
+            }
+
+            #{$parent}-item {
+                width: 100%;
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+                color: hsl(var(--white));
+                font-size: rem(16px);
+                font-weight: 500;
+                line-height: 150%;
+                padding: 12px 24px;
+
+                svg {
+                    width: 1.2em;
+                    height: 1.2em;
+                    flex-shrink: 0;
+                }
+
+                @include msm-screen {
+                    font-size: rem(16px);
+
+                    svg {
+                        width: 1em;
+                        height: 1em;
+                    }
+                }
+
+                &.logout {
+                    color: hsl(var(--danger));
+                }
+
+                &:hover,
+                &:focus {
+                    outline: none;
+                    box-shadow: none;
+                    color: hsl(var(--dark));
+                    background-color: hsl(var(--base));
+                }
+            }
+
+            #{$parent}-info {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+
+                &__icon {
+                    --size: 28px;
+                    width: var(--size);
+                    height: var(--size);
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-shrink: 0;
+                    color: hsl(var(--dark));
+                    background-color: hsl(var(--base));
+
+                    svg {
+                        width: 50%;
+                        height: 50%;
+                    }
+                }
+
+                &__content {
+                    flex-grow: 1;
+                }
+
+                &__name {
+                    font-size: rem(12px);
+                    font-weight: 500;
+                    color: hsl(var(--white));
+                    line-height: 100%;
+                    @include line-clamp(1);
+                    margin-bottom: 4px;
+                }
+
+                &__balance {
+                    font-size: rem(14px);
+                    font-weight: 600;
+                    color: hsl(var(--white));
+                    line-height: 100%;
+                    @include line-clamp(1);
+                }
+            }
+        }
+    }
+
+    @at-root {
+        #{$action} {
+            #{$parent}-menu {
+                min-width: 215px;
+                padding: 0px;
+                border-radius: 16px;
+                border: 1px solid hsl(var(--border-color));
+                background-color: hsl(var(--white));
+                overflow: hidden;
+                transition: all .3s ease;
+                top: calc(100% + 6px);
+                right: 0px;
+                left: auto;
+                display: flex;
+                flex-direction: column;
+                visibility: hidden;
+                opacity: 0;
+                box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+                &.show {
+                    top: 100%;
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+
+            #{$parent}-item {
+                width: 100%;
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+                color: hsl(var(--dark)/0.8);
+                font-size: rem(16px);
+                font-weight: 500;
+                line-height: 150%;
+                padding: 8px 16px;
+
+                svg {
+                    width: 1.2em;
+                    height: 1.2em;
+                    flex-shrink: 0;
+                }
+
+                @include msm-screen {
+                    font-size: rem(16px);
+
+                    svg {
+                        width: 1em;
+                        height: 1em;
+                    }
+                }
+
+                &.logout {
+                    color: hsl(var(--danger));
+                }
+
+                &:hover,
+                &:focus {
+                    outline: none;
+                    box-shadow: none;
+                    color: hsl(var(--dark));
+                    background-color: hsl(var(--base));
+                }
+            }
+        }
+    }
+
+}
+
+/* ========================= Dropdown CSS End ========================= */

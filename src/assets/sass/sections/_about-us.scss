@@ -1,0 +1,101 @@
+/* ========================= About Us CSS Start ======================== */
+.about-us {
+    border-radius: var(--section-radius);
+    background-color: hsl(var(--white));
+
+    .section-heading {
+        margin-bottom: 40px;
+
+        &__title {
+            margin-bottom: 16px;
+        }
+    }
+
+    &__thumb {
+        width: 100%;
+        max-width: 545px;
+        display: block;
+        object-fit: cover;
+
+        @include lg-screen {
+            max-width: 415px;
+        }
+
+        @include md-screen {
+            max-width: 100%;
+            aspect-ratio: unset;
+        }
+    }
+
+    &__desc {
+        font-size: rem(18px);
+        color: hsl(var(--dark)/0.8);
+        line-height: 150%;
+    }
+
+
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        margin-top: 32px;
+
+        @include msm-screen {
+            align-items: flex-start;
+            flex-direction: column;
+        }
+    }
+
+    &__avatar {
+        width: 150px;
+        flex-shrink: 0;
+    }
+
+    &-info {
+        --gap: 48px;
+        width: fit-content;
+        display: flex;
+        align-items: center;
+        gap: var(--gap);
+
+        @include msm-screen {
+            --gap: 32px;
+        }
+
+        &-item {
+            position: relative;
+
+            &:not(:last-child)::after {
+                content: '';
+                width: 1px;
+                height: 40px;
+                display: inline-block;
+                position: absolute;
+                top: 50%;
+                right: calc(var(--gap) * -0.5);
+                transform: translateY(-50%);
+                background-color: hsl(var(--border-color));
+
+                @include xxsm-screen {
+                    height: 30px;
+                }
+            }
+
+            &__content {
+                flex-grow: 1;
+            }
+
+            &__title {
+                color: hsl(var(--dark));
+                margin-bottom: 4px;
+            }
+
+            &__desc {
+                font-size: 1rem;
+                color: hsl(var(--dark)/0.8);
+            }
+        }
+    }
+}
+
+/* ========================= About Us CSS End ========================== */

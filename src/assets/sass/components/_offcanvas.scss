@@ -1,0 +1,89 @@
+/* ========================= Offcanvas CSS Start ========================= */
+.navbar--offcanvas {
+    @include md-screen {
+        border-left: 1px solid hsl(var(--border-color)) !important;
+        background-color: hsl(var(--white)) !important;
+
+        .offcanvas-header {
+            border-bottom: 1px solid hsl(var(--border-color) /0.5);
+
+            .navbar-brand {
+                padding-top: 0;
+                padding-bottom: 0;
+                margin-right: 0px;
+
+                img {
+                    max-width: 190px;
+                    object-fit: contain;
+                    display: block;
+
+                    @include msm-screen {
+                        max-width: 150px;
+                    }
+
+                    @include msm-screen {
+                        max-width: 120px;
+                    }
+
+                    @include xxsm-screen {
+                        max-width: 110px;
+                    }
+                }
+            }
+        }
+
+        .btn--close {
+            --size: 24px;
+            color: hsl(var(--base-two)/0.8);
+            background-color: hsl(var(--base-two)/0.1);
+
+            &:hover,
+            &:focus {
+                outline: none;
+                box-shadow: none;
+                background-color: hsl(var(--black)/0.2);
+            }
+        }
+    }
+}
+
+
+.filter--offcanvas {
+    max-width: 380px;
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    gap: 16px;
+    position: sticky;
+    top: calc(var(--header-height) + 48px);
+    border-radius: 16px;
+    background-color: hsl(var(--white)) !important;
+
+    @include md-screen {
+        position: fixed;
+        border-left: none !important;
+        border-radius: 0px;
+    }
+
+    .offcanvas-header {
+        padding: 0px;
+        padding-bottom: 8px;
+        border-bottom: 1px solid hsl(var(--border-color));
+
+        @media screen and (min-width: 992px) {
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    .offcanvas-body {
+        padding: 0px;
+    }
+
+
+    .btn--close {
+        --size: 24px;
+    }
+}
+
+/* ========================= Offcanvas CSS End ========================= */

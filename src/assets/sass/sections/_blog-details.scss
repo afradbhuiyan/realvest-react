@@ -1,0 +1,125 @@
+/* ========================= Blog Details CSS Start ========================= */
+.blog-details {
+    border-radius: var(--section-radius);
+    background-color: hsl(var(--white));
+
+    &__thumb {
+        width: 100%;
+        display: block;
+        object-fit: cover;
+        border-radius: 16px 16px 0px 0px;
+        aspect-ratio: 1/0.5455390335;
+    }
+
+    &__title {
+        margin-bottom: 8px;
+    }
+
+    &__date {
+        color: hsl(var(--dark)/0.8);
+        text-align: center;
+        font-size: rem(16px);
+        font-weight: 500;
+        line-height: 100%;
+        margin-bottom: 32px;
+
+        @include msm-screen {
+            margin-bottom: 24px;
+        }
+    }
+
+
+    &__content {
+        border-radius: 16px;
+        border: 1px solid hsl(var(--border-color));
+
+        &-main {
+            padding: 24px;
+            padding-top: 32px;
+
+            @include msm-screen {
+                padding: 16px;
+                padding-top: 24px;
+            }
+        }
+
+        &-bottom {
+            padding: 24px;
+            padding-top: 12px;
+            border-top: 1px solid hsl(var(--border-color));
+            position: relative;
+
+            @include msm-screen {
+                padding: 16px;
+                padding-top: 8px;
+            }
+        }
+    }
+
+    &__share {}
+
+    &-divider {
+        width: 100%;
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+
+        &::before,
+        &::after {
+            content: "";
+            -webkit-box-flex: 1;
+            -ms-flex-positive: 1;
+            flex-grow: 1;
+            width: 100%;
+            height: 1px;
+            display: inline-block;
+            background-color: hsl(var(--border-color)/0.8);
+        }
+
+        &__text {
+            font-size: 0.875rem;
+            font-weight: 600;
+            line-height: 100%;
+            color: hsl(var(--dark)/0.8);
+            white-space: nowrap;
+        }
+    }
+
+    &-sidebar {
+        gap: 16px;
+        padding: 16px;
+        display: flex;
+        flex-direction: column;
+        border: 1px solid hsl(var(--border-color));
+        border-radius: 16px;
+        position: sticky;
+        top: calc(var(--header-height) + 24px);
+
+        &__header {
+            padding-bottom: 12px;
+            border-bottom: 1px solid hsl(var(--border-color));
+            position: relative;
+
+            &:first-child {
+                border-top-left-radius: inherit;
+                border-top-right-radius: inherit;
+            }
+        }
+
+        &__body {
+            flex: 1 1 auto;
+        }
+
+        &__footer {
+            padding-top: 12px;
+            border-top: 1px solid hsl(var(--border-color));
+
+            &:last-child {
+                border-bottom-left-radius: inherit;
+                border-bottom-right-radius: inherit;
+            }
+        }
+    }
+}
+
+/* ========================= Blog Details CSS End =========================== */

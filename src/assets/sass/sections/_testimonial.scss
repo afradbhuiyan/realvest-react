@@ -1,0 +1,226 @@
+/* ========================= Testimonail CSS Start ========================= */
+.testimonial {
+  border-radius: var(--section-radius);
+  background-color: hsl(var(--section-bg));
+
+  &-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    @include msm-screen {
+      gap: 12px;
+    }
+
+    &__header {
+      padding: 16px;
+      border-radius: 16px;
+      border: 1px solid hsl(var(--border-color));
+      background-color: hsl(var(--white));
+
+      @include msm-screen {
+        padding: 12px;
+      }
+    }
+
+    &__body {
+      flex: 1 1 100%;
+      padding: 16px;
+      border-radius: 16px;
+      border: 1px solid hsl(var(--border-color));
+      background-color: hsl(var(--white));
+      display: flex;
+      flex-direction: column;
+      gap: 80px;
+
+      @include msm-screen {
+        padding: 12px;
+      }
+
+      &-top {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      &-bottom {
+        padding-top: 16px;
+        border-top: 1px dashed hsl(var(--border-color));
+      }
+    }
+
+    &__location {
+      font-size: rem(14px);
+      font-weight: 500;
+      color: hsl(var(--dark)/0.8);
+    }
+
+    &__desc {
+      font-size: rem(18px);
+      font-weight: 500;
+      line-height: 150%;
+      color: hsl(var(--base-two));
+
+      @include msm-screen {
+        font-size: rem(16px);
+      }
+    }
+
+    &-user {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+
+      @include msm-screen {
+        gap: 12px;
+      }
+
+      &__thumb {
+        --size: 40px;
+        width: var(--size);
+        height: var(--size);
+        border-radius: 50%;
+        object-fit: cover;
+        display: block;
+        flex-shrink: 0;
+      }
+
+      &__content {
+        flex-grow: 1;
+      }
+
+      &__name {
+        font-size: rem(16px);
+        font-weight: 500;
+        color: hsl(var(--dark));
+        line-height: 100%;
+
+        @include msm-screen {
+          font-size: rem(14px);
+        }
+      }
+
+      &__position {
+        font-size: rem(14px);
+        font-weight: 400;
+        color: hsl(var(--dark)/0.8);
+
+        @include msm-screen {
+          font-size: rem(12px);
+        }
+      }
+    }
+
+    .rating-list {
+      gap: 6px;
+
+      i {
+        font-size: rem(18px);
+        color: hsl(var(--base));
+      }
+    }
+  }
+
+  &-slider {
+    --slide-gap: 8px !important;
+
+    .slick-track {
+      &>:nth-child(even) {
+        .testimonial-card {
+          flex-direction: column-reverse;
+        }
+      }
+    }
+
+    &__slide {
+      height: 100%;
+    }
+
+    &-ctrl {
+      width: fit-content;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 4px;
+      background-color: hsl(var(--base));
+      border-radius: 999px;
+      margin-inline: auto;
+      margin-top: 24px;
+
+      .slick-arrow {
+        --size: 32px;
+        width: var(--size);
+        height: var(--size);
+        border-radius: 50%;
+        font-size: calc(var(--size) * 0.5);
+        color: hsl(var(--dark));
+        border: none;
+        background-color: hsl(var(--white));
+        transition: .3s ease;
+
+        @include msm-screen {
+          --size: 28px;
+        }
+
+        &:hover,
+        &:focus {
+          outline: none;
+          box-shadow: none;
+          color: hsl(var(--white));
+          background-color: hsl(var(--base-two));
+        }
+
+        &.slick-prev {
+          order: 1;
+        }
+
+        &.slick-next {
+          order: 3;
+        }
+
+        &.slick-disabled {
+          color: hsl(var(--dark)) !important;
+          background-color: hsl(var(--white)) !important;
+          opacity: 0.85;
+        }
+      }
+
+      .slick-dots {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        order: 2;
+
+        li {
+          line-height: 100%;
+
+          button {
+            --size: 10px;
+            width: var(--size);
+            height: var(--size);
+            border-radius: 999px;
+            background-color: hsl(var(--white));
+            opacity: 0.8;
+            border: none;
+            text-indent: -999;
+            font-size: 0px;
+            line-height: 100%;
+
+            @include msm-screen {
+              --size: 8px;
+            }
+          }
+
+          &.slick-active button {
+            width: calc(var(--size) * 3);
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* ========================= Testimonail CSS End =========================== */

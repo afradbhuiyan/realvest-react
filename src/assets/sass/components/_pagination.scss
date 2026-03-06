@@ -1,0 +1,90 @@
+/* ========================= Pagination CSS Start ========================= */
+.pagination {
+  gap: 16px;
+
+  @include msm-screen {
+    margin: 0 auto;
+  }
+
+  .page-item {
+    &.active {
+      .page-link {
+        color: hsl(var(--dark)) !important;
+        border-color: hsl(var(--base)) !important;
+        background-color: hsl(var(--base)) !important;
+      }
+    }
+
+    &.disabled {
+      .page-link {
+        color: hsl(var(--gray) / 0.5);
+        border-color: hsl(var(--border-color)/0.5);
+        background-color: hsl(var(--dark)/0.05);
+        pointer-events: none;
+      }
+    }
+
+    .page-link {
+      --size: 36px;
+      width: var(--size);
+      height: var(--size);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: transparent;
+      font-size: calc(var(--size) * 0.4);
+      font-weight: 400;
+      color: hsl(var(--dark)/0.8);
+      border: 1px solid hsl(var(--border-color));
+      background-color: hsl(var(--white));
+      white-space: nowrap;
+
+      &:has(i) {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        color: hsl(var(--light));
+        font-size: rem(14px);
+        font-weight: 600;
+        line-height: 20px;
+      }
+
+      i.las {
+        font-size: rem(18px);
+      }
+
+      &:hover,
+      &:focus {
+        color: hsl(var(--dark));
+      }
+
+      &:focus {
+        outline: none;
+        box-shadow: none;
+      }
+    }
+  }
+}
+
+
+.pagination-wrapper {
+  nav>* {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  p {
+    font-size: rem(14px);
+    font-weight: 500;
+    line-height: 150%;
+    color: hsl(var(--dark)/0.5) !important;
+
+    span {
+      color: hsl(var(--dark)/0.8) !important;
+      font-weight: 600;
+    }
+  }
+}
+
+/* ========================= Pagination CSS End ========================= */

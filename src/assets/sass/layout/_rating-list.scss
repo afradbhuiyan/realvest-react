@@ -1,0 +1,20 @@
+/* ========================= Rating List CSS Start ======================== */
+.rating-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+
+  i {
+    color: hsl(var(--warning));
+    font-size: rem(16px);
+  }
+
+  &__text {
+    font-size: rem(16px);
+    font-weight: 500;
+    color: hsl(var(--dark)/0.8);
+  }
+}
+
+/* ========================= Rating List CSS End ========================== */

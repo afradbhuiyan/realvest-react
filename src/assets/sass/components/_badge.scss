@@ -1,0 +1,110 @@
+/* ========================= Badge CSS Start ========================= */
+.badge {
+  font-size: rem(14px);
+  font-weight: 500;
+  line-height: 100%;
+  padding: 6px 12px;
+  border-radius: 999px;
+  text-align: center;
+
+  &--base {
+    color: hsl(var(--dark));
+    background-color: hsl(var(--base) / 0.1);
+  }
+
+  &-outline--base {
+    color: hsl(var(--dark));
+    border: 1px solid hsl(var(--base) / 0.2);
+    background-color: hsl(var(--base) / 0.1);
+  }
+
+  &--base-two {
+    color: hsl(var(--base-two));
+    background-color: hsl(var(--base-two) / 0.1);
+  }
+
+  &-outline--base-two {
+    color: hsl(var(--base-two));
+    border: 1px solid hsl(var(--base-two) / 0.2);
+    background-color: hsl(var(--base-two) / 0.1);
+  }
+
+  &--primary {
+    color: hsl(var(--primary));
+    background-color: hsl(var(--primary) / 0.1);
+  }
+
+  &-outline--primary {
+    color: hsl(var(--primary));
+    border: 1px solid hsl(var(--primary) / 0.2);
+    background-color: hsl(var(--primary) / 0.1);
+  }
+
+  &--secondary {
+    color: hsl(var(--secondary));
+    background-color: hsl(var(--secondary) / 0.1);
+  }
+
+  &-outline--secondary {
+    color: hsl(var(--secondary));
+    border: 1px solid hsl(var(--secondary) / 0.2);
+    background-color: hsl(var(--secondary) / 0.1);
+  }
+
+  &--success {
+    color: hsl(var(--success));
+    background-color: hsl(var(--success) / 0.1);
+  }
+
+  &-outline--success {
+    color: hsl(var(--success));
+    border: 1px solid hsl(var(--success) / 0.2);
+    background-color: hsl(var(--success) / 0.1);
+  }
+
+  &--danger {
+    color: hsl(var(--danger));
+    background-color: hsl(var(--danger) / 0.1);
+  }
+
+  &-outline--danger {
+    color: hsl(var(--danger));
+    border: 1px solid hsl(var(--danger) / 0.2);
+    background-color: hsl(var(--danger) / 0.1);
+  }
+
+  &--warning {
+    color: hsl(var(--warning));
+    background-color: hsl(var(--warning) / 0.1);
+  }
+
+  &-outline--warning {
+    color: hsl(var(--warning));
+    border: 1px solid hsl(var(--warning) / 0.2);
+    background-color: hsl(var(--warning) / 0.1);
+  }
+
+  &--info {
+    color: hsl(var(--info));
+    background-color: hsl(var(--info) / 0.1);
+  }
+
+  &-outline--info {
+    color: hsl(var(--info));
+    border: 1px solid hsl(var(--info) / 0.2);
+    background-color: hsl(var(--info) / 0.1);
+  }
+
+  &--dark {
+    color: hsl(var(--dark));
+    background-color: hsl(var(--dark) / 0.1);
+  }
+
+  &-outline--dark {
+    color: hsl(var(--dark));
+    border: 1px solid hsl(var(--dark) / 0.2);
+    background-color: hsl(var(--dark) / 0.1);
+  }
+}
+
+/* ========================= Badge CSS End ========================= */

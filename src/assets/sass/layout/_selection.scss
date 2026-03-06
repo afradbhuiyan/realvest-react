@@ -1,0 +1,7 @@
+/* ========================= Selection CSS Start ========================= */
+::selection {
+  color: hsl(var(--dark));
+  background: hsl(var(--base));
+}
+
+/* ========================= Selection CSS End =========================== */

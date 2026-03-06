@@ -1,0 +1,204 @@
+/* ========================= Our Location CSS Start ======================== */
+.our-location {
+    border-radius: var(--section-radius);
+    background-color: hsl(var(--white));
+
+    .section-heading {
+        &__title {
+            max-width: 300px;
+        }
+    }
+
+    &-card {
+        $our-location-card: &;
+        position: relative;
+        border-radius: 16px;
+        overflow: hidden;
+        background-color: hsl(var(--white));
+
+        &::before,
+        &::after {
+            content: '';
+            width: 100%;
+            height: 100%;
+            display: inline-block;
+            background-color: hsl(var(--black)/0.2);
+            position: absolute;
+            inset: 0;
+            transition: .3s ease;
+        }
+
+        &::after {
+            opacity: 0;
+            backdrop-filter: blur(6px);
+        }
+
+        &__thumb {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+            transition: .5s ease-in-out;
+        }
+
+        &__content {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 16px;
+            gap: 8px;
+
+            @include msm-screen {
+                padding: 12px;
+            }
+        }
+
+        &__title {
+            color: hsl(var(--white));
+            @include line-clamp(1);
+            transition: .3s ease;
+
+            &:hover,
+            &:focus {
+                outline: none;
+                box-shadow: none;
+            }
+        }
+
+        &__total {
+            width: fit-content;
+            max-width: 100%;
+            font-size: 0.875rem;
+            font-weight: 600;
+            line-height: 110%;
+            padding: 6px 12px;
+            color: hsl(var(--dark)/0.8);
+            background-color: hsl(var(--white));
+            border-radius: 9999px;
+            white-space: nowrap;
+            transition: .3s ease;
+            @include line-clamp(1);
+
+            @include msm-screen {
+                font-size: rem(12px);
+                padding: 4px 8px;
+
+            }
+        }
+
+        &:hover {
+            #{$our-location-card}__total {
+                color: hsl(var(--base));
+                background-color: hsl(var(--base-two));
+            }
+
+            #{$our-location-card}__title {
+                color: hsl(var(--base));
+            }
+        }
+    }
+
+    &-slider {
+        @include sm-screen {
+            --slide-gap: 8px !important;
+        }
+
+        &:has(.our-location-card:hover) .our-location-card::after {
+            opacity: 1;
+        }
+
+        &:has(.our-location-card:hover) .our-location-card:hover::after {
+            opacity: 0;
+        }
+
+
+        &-ctrl {
+            width: fit-content;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 4px;
+            background-color: hsl(var(--base));
+            border-radius: 999px;
+            margin-inline: auto;
+            margin-top: 24px;
+
+            .slick-arrow {
+                --size: 32px;
+                width: var(--size);
+                height: var(--size);
+                border-radius: 50%;
+                font-size: calc(var(--size) * 0.5);
+                color: hsl(var(--dark));
+                border: none;
+                background-color: hsl(var(--white));
+                transition: .3s ease;
+
+                @include msm-screen {
+                    --size: 28px;
+                }
+
+                &:hover,
+                &:focus {
+                    outline: none;
+                    box-shadow: none;
+                    color: hsl(var(--white));
+                    background-color: hsl(var(--base-two));
+                }
+
+                &.slick-prev {
+                    order: 1;
+                }
+
+                &.slick-next {
+                    order: 3;
+                }
+
+                &.slick-disabled {
+                    color: hsl(var(--dark)) !important;
+                    background-color: hsl(var(--white)) !important;
+                    opacity: 0.85;
+                }
+            }
+
+            .slick-dots {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                order: 2;
+
+                li {
+                    line-height: 100%;
+
+                    button {
+                        --size: 10px;
+                        width: var(--size);
+                        height: var(--size);
+                        border-radius: 999px;
+                        background-color: hsl(var(--white));
+                        opacity: 0.8;
+                        border: none;
+                        text-indent: -999;
+                        font-size: 0px;
+                        line-height: 100%;
+
+                        @include msm-screen {
+                            --size: 8px;
+                        }
+                    }
+
+                    &.slick-active button {
+                        width: calc(var(--size) * 3);
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* ========================= Our Location CSS End ========================== */

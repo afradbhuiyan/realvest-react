@@ -1,0 +1,19 @@
+/* ========================= Fancybox CSS Start ================================== */
+.fancybox__backdrop {
+  background: hsl(var(--dark)/0.15);
+  backdrop-filter: blur(4px);
+}
+
+.f-html {
+  padding: 0px;
+  background: transparent;
+}
+
+.f-iframe {
+  max-width: 1200px;
+  margin-inline: auto;
+  aspect-ratio: 1/0.6666666667;
+}
+
+
+/* ========================= Fancybox CSS End ==================================== */

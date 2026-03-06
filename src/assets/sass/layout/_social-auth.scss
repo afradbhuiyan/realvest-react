@@ -1,0 +1,44 @@
+/* ========================= Social Auth CSS Start =================== */
+.social-auth {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+
+  &__btn {
+    flex: 1 1 auto;
+    font-size: rem(16px);
+    font-weight: 500;
+    line-height: 100%;
+    white-space: nowrap;
+    padding: 13px;
+    border-radius: 999px;
+    color: hsl(var(--dark)/0.8);
+    border: 1px solid hsl(var(--border-color));
+    background-color: hsl(var(--white));
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    position: relative;
+    z-index: 1;
+
+    img {
+      --size: 1.2857142857em;
+      width: var(--size);
+      height: var(--size);
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    &:hover,
+    &:focus {
+      outline: none;
+      box-shadow: none;
+      color: hsl(var(--dark));
+      background-color: hsl(var(--base)/0.05);
+    }
+  }
+}
+
+/* ========================= Social Auth CSS End ===================== */

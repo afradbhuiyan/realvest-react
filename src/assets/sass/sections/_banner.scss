@@ -1,0 +1,347 @@
+/* ========================= Banner CSS Start ======================== */
+.banner {
+  width: 100%;
+  border-radius: var(--section-radius);
+  min-height: calc(100vh - (var(--section-offset) * 2));
+  position: relative;
+  z-index: 1;
+  padding: var(--header-height) 0px 0px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  @include lg-screen {
+    min-height: unset;
+    padding: calc(var(--header-height) + 80px) 0px 80px 0px;
+  }
+
+  @include md-screen {
+    padding: calc(var(--header-height) + 60px) 0px 60px 0px;
+  }
+
+  @include sm-screen {
+    padding: calc(var(--header-height) + 40px) 0px 40px 0px;
+  }
+
+  @include msm-screen {
+    padding: calc(var(--header-height) + 30px) 0px 30px 0px;
+  }
+
+  &::before {
+    content: '';
+    width: 100%;
+    height: 300px;
+    display: inline-block;
+    position: absolute;
+    right: 0px;
+    left: 0px;
+    bottom: 0px;
+    background: linear-gradient(0deg, #080b06 18.49%, #080b0600);
+    mix-blend-mode: soft-light;
+    border-radius: inherit;
+    z-index: -1;
+  }
+
+  &-video {
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+
+    &::before {
+      content: '';
+      width: 100%;
+      height: 100%;
+      display: inline-block;
+      border-radius: inherit;
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(#2d3d218f 32%, #2d3d2100);
+    }
+
+    video {
+      width: 100%;
+      height: 100%;
+      border-radius: inherit;
+      display: block;
+      object-fit: cover;
+      object-position: top;
+    }
+  }
+
+  &-border {
+    width: 100%;
+    max-width: 1296px;
+    height: 100%;
+    position: absolute;
+    inset: 0%;
+    z-index: -1;
+    display: flex;
+    justify-content: space-between;
+    margin-inline: auto;
+
+    &__item {
+      width: 1px;
+      display: block;
+      background-color: #ffffff29;
+    }
+  }
+
+  &-content {
+    &__tagline {
+      width: fit-content;
+      font-size: rem(20px);
+      font-weight: 500;
+      color: hsl(var(--white));
+      margin-bottom: 16px;
+
+      @include lg-screen {
+        font-size: rem(18px);
+      }
+
+      @include msm-screen {
+        font-size: rem(16px);
+        margin-bottom: 8px;
+      }
+
+      @include xxsm-screen {
+        font-size: rem(14px);
+      }
+    }
+
+    &__title {
+      max-width: 800px;
+      font-size: clamp(2rem, 1.4996rem + 2.502vw, 4rem);
+      color: hsl(var(--white));
+      margin-bottom: 16px;
+
+      @include md-screen {
+        max-width: 600px;
+      }
+
+      @include msm-screen {
+        margin-bottom: 8px;
+      }
+    }
+
+    &__desc {
+      max-width: 700px;
+      font-size: rem(18px);
+      font-weight: 400;
+      line-height: 150%;
+      color: hsl(var(--white));
+
+      @include msm-screen {
+        font-size: rem(16px);
+      }
+
+      @include xsm-screen {
+        font-size: rem(14px);
+      }
+    }
+
+    &__btns {
+      max-width: fit-content;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 56px;
+
+      @include md-screen {
+        margin-top: 48px;
+      }
+
+      @include msm-screen {
+        flex-wrap: wrap;
+        margin-top: 32px;
+      }
+
+      @include xsm-screen {
+        margin-top: 24px;
+      }
+
+      .btn {
+        flex-grow: 1;
+
+        @include msm-screen {
+          &:has(.btn__icon:first-child) {
+            padding: 9px 18px 9px 9px;
+          }
+
+          &:has(.btn__icon:last-child) {
+            padding: 9px 9px 9px 18px;
+          }
+        }
+      }
+    }
+  }
+
+  &-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin-top: 40px;
+
+    @include md-screen {
+      margin-top: 32px;
+    }
+
+    @include msm-screen {
+      margin-top: 24px;
+    }
+
+    @include xsm-screen {
+      margin-top: 16px;
+    }
+  }
+
+  &-info {
+    --gap: 72px;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    gap: var(--gap);
+
+    @include lg-screen {
+      --gap: 64px;
+    }
+
+    @include md-screen {
+      --gap: 56px;
+    }
+
+    @include sm-screen {
+      --gap: 48px;
+    }
+
+    @include msm-screen {
+      --gap: 24px;
+    }
+
+    &-item {
+      flex: 1 1 100%;
+      position: relative;
+
+      &__title {
+        font-weight: 600;
+        white-space: nowrap;
+        color: hsl(var(--white));
+        margin-bottom: 8px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 6px;
+        letter-spacing: 1px;
+
+        @include xsm-screen {
+          font-size: rem(18px);
+        }
+
+        .symbol {
+          font-size: 0.65em;
+          line-height: 110%;
+          color: hsl(var(--base));
+        }
+      }
+
+      &__label {
+        color: hsl(var(--white));
+        font-size: rem(18px);
+        font-weight: 400;
+        text-align: center;
+        white-space: nowrap;
+
+        @include xsm-screen {
+          font-size: rem(14px);
+        }
+      }
+    }
+  }
+
+  &-card {
+    display: flex;
+    align-items: center;
+    border-radius: 16px;
+    border: 1px solid #ffffff52;
+    background-color: #fff3;
+    backdrop-filter: blur(62px);
+    padding: 16px;
+    gap: 16px;
+
+    @include msm-screen {
+      padding: 12px;
+      gap: 12px;
+    }
+
+    &__video {
+      width: 140px;
+      aspect-ratio: 1/0.8;
+      flex-shrink: 0;
+      display: block;
+      border-radius: 12px;
+      overflow: hidden;
+      position: relative;
+
+      @include msm-screen {
+        width: 100px;
+      }
+
+      &::before {
+        --size: 50px;
+        content: "\f04b";
+        width: var(--size);
+        height: var(--size);
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: calc(var(--size) * 0.4);
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: hsl(var(--white));
+        background-color: hsl(var(--white)/0.2);
+        backdrop-filter: blur(12px);
+
+        @include msm-screen {
+          --size: 36px;
+        }
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;
+      }
+    }
+
+    &__content {
+      flex-grow: 1;
+    }
+
+    &__title {
+      margin-bottom: 8px;
+      color: hsl(var(--white));
+    }
+
+    &__desc {
+      font-size: rem(14px);
+      font-weight: 500;
+      color: hsl(var(--white)/0.8);
+
+      @include msm-screen {
+        font-size: rem(12px);
+      }
+    }
+  }
+}
+
+/* ========================= Banner CSS End ========================== */

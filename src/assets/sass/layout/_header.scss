@@ -1,0 +1,203 @@
+/* ========================= Header CSS Start ========================== */
+.header {
+  width: 100%;
+  position: fixed;
+  top: calc(var(--section-offset));
+  z-index: 5;
+
+
+  &>.container {
+    max-width: calc(1320px + (var(--section-offset) * 2));
+  }
+
+  .navbar {
+    padding: var(--section-offset) !important;
+    border-radius: 999px;
+    gap: 24px;
+    background-color: transparent;
+    transition: background-color .3s ease;
+    transition: .3s ease;
+
+
+    @include lg-screen {
+      gap: 16px;
+    }
+
+    @include md-screen {
+      gap: 12px;
+    }
+
+    @include msm-screen {
+      gap: 8px;
+    }
+
+    &-brand {
+      padding-top: 0;
+      padding-bottom: 0;
+      margin-right: 0px;
+
+      img {
+        max-width: 190px;
+        object-fit: contain;
+        display: block;
+
+        @include msm-screen {
+          max-width: 150px;
+        }
+
+        @include msm-screen {
+          max-width: 120px;
+        }
+
+        @include xxsm-screen {
+          max-width: 110px;
+        }
+      }
+    }
+
+    &-toggler {
+      --size: 40px;
+      width: var(--size);
+      height: var(--size);
+      border-radius: 50%;
+      border: none;
+      padding: 0px;
+      color: hsl(var(--dark));
+      background-color: hsl(var(--base));
+      font-size: calc(var(--size) * 0.6);
+      transition: .2s ease;
+
+      @include msm-screen {
+        --size: 36px;
+      }
+
+      @include xxsm-screen {
+        --size: 32px;
+      }
+
+      &:focus,
+      &:hover {
+        outline: none;
+        box-shadow: none;
+      }
+    }
+  }
+
+  .offcanvas {
+    flex-shrink: 0;
+  }
+
+  .nav-menu {
+
+    @media screen and (min-width: 992px) {
+      padding: 4px;
+      border: 1px solid #ffffff52;
+      border-radius: 999px;
+      background-color: #fff3;
+      backdrop-filter: blur(62px);
+
+      .nav-item {
+        position: relative;
+
+        &:not(:last-child) {
+          margin-right: 0px;
+        }
+
+        .nav-link {
+          font-size: rem(16px);
+          font-weight: 500;
+          color: hsl(var(--white)) !important;
+          padding: 7px 21px;
+          position: relative;
+          z-index: 1;
+          border-radius: 999px;
+
+          &:hover,
+          &:focus {
+            color: hsl(var(--base)) !important;
+          }
+          
+          &.active {
+            font-weight: 500;
+            color: hsl(var(--dark)) !important;
+            background-color: hsl(var(--base));
+
+            &::before {
+              display: inline-block;
+            }
+          }
+        }
+      }
+    }
+
+    @include md-screen {
+      .nav-item {
+        display: block;
+        position: relative;
+        text-align: left;
+        margin: 0;
+
+        .nav-link {
+          margin-bottom: 8px;
+          padding: 12px 12px 12px 0 !important;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin: 0 !important;
+          border-bottom: 1px solid hsl(var(--border-color));
+          color: hsl(var(--dark)/0.8);
+          font-size: rem(16px);
+          font-weight: 600;
+
+          &::before {
+            display: none;
+          }
+
+          &.show {
+            &[aria-expanded='true'] {
+              color: hsl(var(--base)) !important;
+
+              i {
+                transform: rotate(180deg);
+              }
+            }
+          }
+        }
+
+
+        .dropdown--lang {
+          margin-bottom: 12px;
+
+          .dropdown-toggle {
+            &:after {
+              color: hsl(var(--dark)/0.8);
+            }
+          }
+
+          .dropdown-menu {
+            position: absolute;
+          }
+        }
+
+        &:nth-last-child(-n+2) {
+          .nav-link {
+            border-bottom-color: transparent;
+          }
+        }
+      }
+    }
+  }
+
+  &.fixed-header {
+    .navbar {
+      background-color: hsl(var(--base-two));
+      transform: scaleX(0.98);
+
+      @include md-screen {
+        transform: none;
+      }
+    }
+  }
+}
+
+/* ========================= Header CSS End ============================ */

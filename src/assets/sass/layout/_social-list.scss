@@ -1,0 +1,43 @@
+/* ========================= Social List CSS Start ========================= */
+.social-list {
+  $social-list: &;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+
+  &__link {
+    --size: 40px;
+    width: var(--size);
+    height: var(--size);
+    border-radius: 50%;
+    color: hsl(var(--white)/0.8);
+    border: 1px solid hsl(var(--border-color)/0.1);
+    background-color: hsl(var(--white)/0.05);
+    backdrop-filter: blur(12px);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(var(--size) * 0.5);
+
+    @include msm-screen {
+      --size: 36px;
+    }
+
+    &:hover,
+    &:focus {
+      color: hsl(var(--dark)) !important;
+      border-color: hsl(var(--base)) !important;
+      background-color: hsl(var(--base)) !important;
+    }
+  }
+
+  &.style-two {
+    #{$social-list}__link {
+      color: hsl(var(--dark));
+      background-color: hsl(var(--base)/0.5);
+    }
+  }
+}
+
+/* ========================= Social List CSS End =========================== */

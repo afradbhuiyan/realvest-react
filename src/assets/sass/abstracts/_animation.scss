@@ -1,0 +1,119 @@
+/* ========================= Animation CSS Start ======================== */
+@keyframes slide-down {
+    0% {
+        opacity: 0;
+        transform: translateY(-150%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes path {
+
+    0%,
+    34%,
+    71%,
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+
+    17% {
+        -webkit-transform: scale(var(--scale_path_1, 1));
+        transform: scale(var(--scale_path_1, 1));
+    }
+
+    49% {
+        -webkit-transform: scale(var(--scale_path_2, 1));
+        transform: scale(var(--scale_path_2, 1));
+    }
+
+    83% {
+        -webkit-transform: scale(var(--scale_path_3, 1));
+        transform: scale(var(--scale_path_3, 1));
+    }
+}
+
+@keyframes spinRing {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+@keyframes rotate {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes path {
+
+    0%,
+    34%,
+    71%,
+    100% {
+        transform: scale(1);
+    }
+
+    17% {
+        transform: scale(var(--scale_path_1, 1));
+    }
+
+    49% {
+        transform: scale(var(--scale_path_2, 1));
+    }
+
+    83% {
+        transform: scale(var(--scale_path_3, 1));
+    }
+}
+
+@keyframes border-animation {
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+@keyframes loader__circle__jumping {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    25% {
+        transform: translateY(-15px) scale(0.5);
+    }
+
+    50% {
+        transform: translateY(0px);
+    }
+
+    75% {
+        transform: translateY(5px) scale(0.9);
+    }
+}
+
+
+/* ========================= Animation CSS End ========================== */

@@ -1,0 +1,329 @@
+/* ========================= Why Invest CSS Start ======================== */
+.why-invest {
+    border-radius: var(--section-radius);
+    background-color: hsl(var(--white));
+
+    &-content {
+        @media screen and (min-width: 1200px) {
+            display: none;
+
+            &.active {
+                display: block;
+            }
+        }
+
+        &__thumb {
+            width: 100%;
+            aspect-ratio: 1/0.8771929825;
+            overflow: hidden;
+            border-radius: 16px;
+            border-bottom-right-radius: 0px;
+            position: relative;
+            margin-bottom: 16px;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: 50% 50%;
+            }
+
+            &-content {
+                width: fit-content;
+                background-color: hsl(var(--white));
+                position: absolute;
+                right: 0px;
+                bottom: 0px;
+                padding: 16px 20px;
+                border-top-left-radius: 24px;
+
+                @include sm-screen {
+                    padding: 8px 16px;
+                }
+
+                @include msm-screen {
+                    padding: 8px 12px;
+                }
+
+                &::before,
+                &::after {
+                    content: '';
+                    --size: 40px;
+                    width: var(--size);
+                    height: var(--size);
+                    position: absolute;
+
+                    @include md-screen {
+                        --size: 28px;
+                    }
+
+                    @include sm-screen {
+                        --size: 20px;
+                    }
+                }
+
+                &::before {
+                    top: calc(var(--size) * -1);
+                    right: 0px;
+                    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0L0 20C0 8.95431 8.95431 0 20 0L0 0Z' fill='white'%3E%3C/path%3E%3C/svg%3E");
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    transform: scale(-1);
+                }
+
+                &::after {
+                    bottom: 0px;
+                    left: calc(var(--size) * -1);
+                    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0L0 20C0 8.95431 8.95431 0 20 0L0 0Z' fill='white'%3E%3C/path%3E%3C/svg%3E");
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    transform: scale(-1);
+                }
+            }
+
+            &-num {
+                font-size: rem(28px);
+                font-weight: 600;
+                font-family: var(--heading-font);
+                color: hsl(var(--dark));
+                letter-spacing: 2px;
+
+                @include sm-screen {
+                    font-size: rem(24px);
+                }
+
+                @include msm-screen {
+                    font-size: rem(20px);
+                }
+            }
+
+            &-title {
+                font-weight: 400;
+                color: hsl(var(--dark));
+
+                @include sm-screen {
+                    font-size: rem(14px);
+                }
+
+                @include msm-screen {
+                    font-size: rem(12px);
+                }
+            }
+        }
+
+
+        &__icon {
+            --size: 64px;
+            width: var(--size);
+            height: var(--size);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: hsl(var(--base));
+            color: hsl(var(--dark));
+            font-size: calc(var(--size) * 0.6);
+            margin-bottom: 16px;
+
+            @include xl-screen {
+                --size: 48px;
+            }
+
+            @include sm-screen {
+                --size: 32px;
+            }
+        }
+
+        &__title {
+            margin-bottom: 16px;
+
+            @include xl-screen {
+                margin-bottom: 12px;
+            }
+        }
+
+        &__desc {
+            font-size: rem(16px);
+            color: hsl(var(--dark)/0.8);
+
+            @include sm-screen {
+                font-size: rem(14px);
+            }
+        }
+    }
+
+    &-tab {
+        display: flex;
+
+        &-item {
+            display: flex;
+            cursor: pointer;
+            border-right: 1px solid transparent;
+            counter-increment: whyInvestTabCounter;
+
+            &:not(.active) {
+                border-right-color: hsl(var(--border-color));
+            }
+
+            &:has(+.active) {
+                border-right-color: transparent;
+            }
+
+            &-thumb {
+                width: 0px;
+                height: 500px;
+                aspect-ratio: 1/0.8771929825;
+                overflow: hidden;
+                transition: transform .8s ease;
+                transform: scale(0);
+                transform-origin: bottom center;
+                border-radius: 16px;
+                border-bottom-right-radius: 0px;
+                position: relative;
+
+                @include xl-screen {
+                    height: 420px;
+                }
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    object-position: 50% 50%;
+                }
+
+                &__content {
+                    width: fit-content;
+                    background-color: hsl(var(--white));
+                    position: absolute;
+                    right: 0px;
+                    bottom: 0px;
+                    padding: 16px 24px;
+                    border-top-left-radius: 24px;
+
+                    @include xl-screen {
+                        padding: 16px 20px;
+                    }
+
+                    &::before,
+                    &::after {
+                        content: '';
+                        --size: 40px;
+                        width: var(--size);
+                        height: var(--size);
+                        position: absolute;
+                    }
+
+                    &::before {
+                        top: calc(var(--size) * -1);
+                        right: 0px;
+                        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0L0 20C0 8.95431 8.95431 0 20 0L0 0Z' fill='white'%3E%3C/path%3E%3C/svg%3E");
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                        transform: scale(-1);
+                    }
+
+                    &::after {
+                        bottom: 0px;
+                        left: calc(var(--size) * -1);
+                        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0L0 20C0 8.95431 8.95431 0 20 0L0 0Z' fill='white'%3E%3C/path%3E%3C/svg%3E");
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                        transform: scale(-1);
+                    }
+                }
+
+                &__num {
+                    font-size: rem(40px);
+                    font-weight: 500;
+                    font-family: var(--heading-font);
+                    color: hsl(var(--base-two));
+                    letter-spacing: 2px;
+
+                    @include xl-screen {
+                        font-size: rem(32px);
+                    }
+                }
+
+                &__title {
+                    font-weight: 400;
+                    color: hsl(var(--dark));
+                }
+            }
+
+            &-toggle {
+                width: 94px;
+                flex-shrink: 0;
+                position: relative;
+                padding: 0px;
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                justify-content: space-between;
+
+                @include xl-screen {
+                    width: 84px;
+                }
+
+                &__title {
+                    width: 100%;
+                    font-size: rem(24px);
+                    font-weight: 500;
+                    color: #c7c7c7;
+                    position: absolute;
+                    left: 50%;
+                    bottom: 28px;
+                    transform: translate(-50%, 0%) rotate(-90deg);
+                    white-space: nowrap;
+                    text-transform: uppercase;
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+                    gap: 16px;
+
+                    @include xl-screen {
+                        font-size: rem(18px);
+                    }
+
+                    &::before {
+                        content: '0' counter(whyInvestTabCounter);
+                        display: inline-block;
+                        font-size: 2em;
+                        font-weight: 400;
+                    }
+                }
+
+                &__arrow {
+                    position: absolute;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    font-size: rem(32px);
+                    color: #c7c7c7;
+                    line-height: 100%;
+
+                    @include xl-screen {
+                        font-size: rem(24px);
+                    }
+                }
+            }
+
+            &.active {
+                flex-grow: 1;
+                flex-shrink: 0;
+
+                .why-invest-tab-item {
+                    &-thumb {
+                        width: 100%;
+                        transform: scale(1);
+                    }
+
+                    &-toggle {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* ========================= Why Invest CSS End ========================== */

@@ -1,0 +1,136 @@
+/* ========================= Properties CSS Start ======================== */
+.prop {
+  border-radius: var(--section-radius);
+  background-color: hsl(var(--section-bg));
+
+  &-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 24px;
+
+
+
+    &__right {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      @include msm-screen {
+        width: 100%;
+
+        .search-form {
+          width: 100%;
+        }
+      }
+
+
+      .btn {
+        color: hsl(var(--dark)/0.6);
+        border-color: hsl(var(--border-color));
+        flex-shrink: 0;
+
+        svg {
+          width: 1em;
+          height: 1em;
+        }
+      }
+    }
+
+    .input--group {
+      .input-group-text {
+        color: hsl(var(--dark)/0.6);
+      }
+    }
+  }
+
+  &-filter {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    &:not(:last-child) {
+      margin-bottom: 16px;
+    }
+
+    &__body {
+      flex: 1 1 100%;
+    }
+
+    &__label {
+      font-size: 1rem;
+      font-weight: 500;
+      color: hsl(var(--dark)/0.8);
+    }
+
+    &__field {
+      &:not(:last-child) {
+        margin-bottom: 16px;
+      }
+    }
+
+    &__range {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      &>* {
+        flex: 1 1 100%;
+      }
+
+      .input-group {
+        .input-group-text {
+          padding: 0px 8px;
+        }
+
+        .form-control {
+          padding: 10.5px 8px;
+        }
+      }
+    }
+
+    &__radio-layout {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    &-radio {
+      flex: 1 1 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 6px;
+      border-radius: 999px;
+      border: 1px solid hsl(var(--border-color));
+      cursor: pointer;
+      transition: .3s ease;
+
+      &__label {
+        font-size: rem(14px);
+        font-weight: 500;
+        line-height: 100%;
+      }
+
+      &:hover,
+      &:focus-within {
+        color: hsl(var(--dark));
+        border-color: hsl(var(--base));
+        background-color: hsl(var(--base)/0.1);
+      }
+
+      &:has(:checked) {
+        color: hsl(var(--dark));
+        border-color: hsl(var(--base));
+        background-color: hsl(var(--base)/0.1);
+      }
+    }
+  }
+
+
+}
+
+/* ========================= Properties CSS End ========================== */

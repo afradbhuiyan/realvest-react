@@ -1,0 +1,80 @@
+/* ========================= Page Banner CSS Start ======================== */
+.page-banner {
+    padding-block: calc(var(--header-height) + 120px) 120px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    border-radius: var(--section-radius);
+
+    @include xxl-screen {
+        padding-block: calc(var(--header-height) + 100px) 100px
+    }
+
+    @include xl-screen {
+        padding-block: calc(var(--header-height) + 80px) 80px
+    }
+
+    @include lg-screen {
+        padding-block: calc(var(--header-height) + 60px) 60px
+    }
+
+    @include md-screen {
+        padding-block: calc(var(--header-height) + 40px) 40px
+    }
+
+    // @include msm-screen {
+    //     padding-block: calc(var(--header-height) + 30px) 30px
+    // }
+
+    &::before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(hsl(var(--base-two)), #80be4e52);
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+    }
+
+    &-border {
+        width: 100%;
+        max-width: 1296px;
+        height: 100%;
+        position: absolute;
+        inset: 0%;
+        z-index: -1;
+        display: flex;
+        justify-content: space-between;
+        margin-inline: auto;
+
+        &__item {
+            width: 1px;
+            display: block;
+            background-color: #ffffff29;
+        }
+    }
+
+
+    &__title {
+        max-width: 90%;
+        text-align: center;
+        color: hsl(var(--white));
+        line-height: 110%;
+        margin-inline: auto;
+        margin-bottom: 24px;
+
+        @include msm-screen {
+            max-width: 100%;
+            margin-bottom: 8px;
+        }
+    }
+
+    .breadcrumb {
+        width: max-content;
+        margin-inline: auto;
+    }
+}
+
+/* ========================= Page Banner CSS End ========================== */

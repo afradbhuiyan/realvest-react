@@ -1,0 +1,129 @@
+/* ========================= Alert CSS Start ======================= */
+.alert {
+  $alert: &;
+  --color: transparent;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  border: 1px solid hsl(var(--color) / 0.15);
+  background-color: hsl(var(--color) / 0.15);
+  border-radius: 6px;
+  margin-bottom: 16px;
+
+  &:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+
+  &__icon {
+    --size: 40px;
+    width: var(--size);
+    height: var(--size);
+    border-radius: 50%;
+    padding: 0px !important;
+    background: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(var(--size) * 0.5);
+    color: hsl(var(--color));
+    background-color: hsl(var(--color)/0.15);
+    border: 1px solid hsl(var(--color) / 0.15);
+    line-height: 1;
+    flex-shrink: 0;
+
+    @include msm-screen {
+      --size: 32px;
+    }
+  }
+
+  &__content {
+    flex-grow: 1;
+  }
+
+  &__title {
+    font-weight: 500;
+    margin-bottom: 4px;
+    color: hsl(var(--heading-color));
+  }
+
+  &__desc {
+    font-size: rem(16px);
+    font-weight: 400;
+    line-height: 150%;
+    color: hsl(var(--dark)/0.8);
+  }
+
+  &__link {
+    font-size: rem(16px);
+    font-weight: 500;
+    color: hsl(var(--color));
+
+    &:focus {
+      outline: none;
+      box-shadow: none;
+      color: hsl(var(--color));
+    }
+  }
+
+  .btn--close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: hsl(var(--color));
+
+    @include msm-screen {
+      --size: 40px;
+    }
+  }
+
+  &--base {
+    --color: var(--base);
+
+
+    .alert__link {
+      color: hsl(var(--dark));
+
+      &:focus {
+        color: hsl(var(--base-two));
+      }
+    }
+
+    .btn--close {
+      color: hsl(var(--dark));
+    }
+  }
+
+  &--base-two {
+    --color: var(--base-two);
+  }
+
+  &--primary {
+    --color: var(--primary);
+  }
+
+  &--secondary {
+    --color: var(--secondary);
+  }
+
+  &--success {
+    --color: var(--success);
+  }
+
+  &--danger {
+    --color: var(--danger);
+  }
+
+  &--warning {
+    --color: var(--warning);
+  }
+
+  &--info {
+    --color: var(--info);
+  }
+
+  &--dark {
+    --color: var(--dark);
+  }
+}
+
+/* ========================= Alert CSS End ======================= */

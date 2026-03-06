@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* ========================= CSS Variables Start ========================= */
+:root {
+  /* Font Family */
+  --heading-font: "Geist", sans-serif;
+  --body-font: "Inter Tight", sans-serif;
+
+  /* Base Color (#9ff659) */
+  @include colorVariable(--base, #9ff659, 9);
+
+  /* Base Two Color (#2d3d21) */
+  @include colorVariable(--base-two, #2d3d21, 9);
+
+  /* Primary Color */
+  @include colorVariable(--primary, #6338ff, 9);
+
+  /* Secondary Color */
+  @include colorVariable(--secondary, #62748e, 9);
+
+  /* Success Color */
+  @include colorVariable(--success, #35C75A, 9);
+
+  /* Danger Color */
+  @include colorVariable(--danger, #EB4E3D, 9);
+
+  /* Warning Color */
+  @include colorVariable(--warning, #fe9a00, 9);
+
+  /* Info Color */
+  @include colorVariable(--info, #3c83f6, 9);
+
+  /* Color Variables */
+  --white: 0 0% 100%; //#ffffff 
+  --black: 0 0% 0%; //#000000
+  --dark: 0 0% 7%; //#111
+  --gray: 0 0% 46%; //#757575
+  --gray-two: 0 0% 22%; //#383838
+  --gray-three: 0 0% 14%; //#242424
+  --body-bg: 0 0% 98%; //#fafafa
+  --section-bg: 0 0% 95%; //#f2f2f2
+  --body-color: var(--gray);
+  --heading-color: var(--dark);
+  --border-color: 214 32% 91%; //#e1e7ef
+  /* Shadow Variables */
+  --box-shadow: 0px 2px 15px hsl(var(--black) / 0.05);
+  /* Banner Header Offset Variables */
+  --bh-offset: clamp(1.5rem, -1.1745rem + 7.4291vw, 6.25rem);
+  /* Section Radius */
+  --section-radius: 20px;
+  /* Section Offset */
+  --section-offset: 12px;
+}
+
+@include msm-screen {
+  :root {
+    /* Section Radius */
+    --section-radius: 16px;
+    /* Section Offset */
+    --section-offset: 8px;
+  }
+}
+
+/* ========================= CSS Variables End ========================= */

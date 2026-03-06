@@ -1,0 +1,287 @@
+/* ========================= Footer CSS Start ========================= */
+.footer {
+  border-radius: var(--section-radius);
+  background-color: hsl(var(--base-two));
+
+  &-top {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding-block: 40px;
+    border-bottom: 1px solid hsl(var(--white)/0.1);
+
+    @include msm-screen {
+      padding-block: 20px;
+    }
+  }
+
+  &-main {
+    position: relative;
+    padding-block: 40px 160px;
+    z-index: 1;
+    overflow: hidden;
+
+    @include msm-screen {
+      padding-block: 20px 80px;
+    }
+  }
+
+  &-bottom {
+    border-top: 1px solid hsl(var(--white)/0.1);
+    padding-block: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+  }
+
+  &-logo {
+    display: block;
+    margin-bottom: 24px;
+
+    img {
+      width: 100%;
+      max-width: 200px;
+      display: block;
+      object-fit: cover;
+
+      @include lg-screen {
+        max-width: 180px;
+      }
+    }
+  }
+
+  &-desc {
+    max-width: 400px;
+    font-size: rem(16px);
+    font-weight: 400;
+    color: hsl(var(--white)/0.8);
+    line-height: 150%;
+
+    @include md-screen {
+      max-width: 100%;
+    }
+  }
+
+  &-item {
+    width: fit-content;
+    margin-inline: auto;
+
+    @include lg-screen {
+      width: 100%;
+    }
+
+    &__title {
+      color: hsl(var(--white));
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      @include msm-screen {
+        margin-bottom: 8px;
+      }
+
+      &::before {
+        content: '';
+        width: 0.4em;
+        height: 0.4em;
+        display: inline-block;
+        border-radius: 2px;
+        background-color: hsl(var(--base));
+      }
+    }
+
+    &__desc {
+      font-size: rem(16px);
+      font-weight: 400;
+      color: hsl(var(--white)/0.8);
+      line-height: 150%;
+    }
+  }
+
+  &-menu {
+    &__item {
+      &:not(:last-child) {
+        margin-bottom: 16px;
+
+        @include msm-screen {
+          margin-bottom: 8px;
+        }
+      }
+    }
+
+    &__icon {
+      --size: 24px;
+    }
+
+    &__link {
+      font-size: rem(16px);
+      font-weight: 500;
+      color: hsl(var(--white)/0.8);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: .3s ease;
+
+      &:hover,
+      &:focus {
+        outline: none;
+        box-shadow: none;
+        color: hsl(var(--base));
+
+        &::before {
+          background-color: hsl(var(--base));
+        }
+      }
+    }
+  }
+
+  &-contact-menu {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 16px;
+
+    @include sm-screen {
+      margin-left: 0px;
+    }
+
+    &__item {
+      flex: 1 1 100%;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    &__icon {
+      --size: 32px;
+      width: var(--size);
+      height: var(--size);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: calc(var(--size) * 0.5);
+      color: hsl(var(--base));
+      background-color: hsl(var(--white)/0.05);
+      backdrop-filter: blur(12px);
+    }
+
+    &__link {
+      font-size: rem(16px);
+      font-weight: 500;
+      color: hsl(var(--white)/0.8);
+
+      &:hover,
+      &:focus {
+        outline: none;
+        box-shadow: none;
+        color: hsl(var(--base));
+      }
+    }
+  }
+
+  &-copyright {
+    font-size: rem(16px);
+    font-weight: 500;
+    color: hsl(var(--white)/0.8);
+    text-align: center;
+
+    @include msm-screen {
+      font-size: rem(14px);
+    }
+
+    a {
+      font-size: 1.1em;
+      color: hsl(var(--base));
+
+      &:hover,
+      &:focus {
+        outline: none;
+        box-shadow: none;
+        color: hsl(var(--base-d-100));
+      }
+    }
+  }
+
+  &-subscribe {
+    display: flex;
+    align-items: center;
+    border: 1px solid hsl(var(--border-color)/0.1);
+    background-color: hsl(var(--white)/0.05);
+    backdrop-filter: blur(12px);
+    border-radius: 999px;
+    padding: 7px 7px 7px 21px;
+    gap: 8px;
+    margin-top: 24px;
+
+    @include msm-screen {
+      padding: 7px 7px 7px 18px;
+    }
+
+    &:focus-within {
+      border-color: hsl(var(--base));
+    }
+
+    &__input {
+      width: 100%;
+      font-size: rem(16px);
+      font-weight: 500;
+      flex-grow: 1;
+      border: none;
+      color: hsl(var(--white));
+      background-color: transparent;
+
+      @include msm-screen {
+        font-size: rem(14px);
+      }
+
+      &::placeholder {
+        color: hsl(var(--white)/0.8);
+      }
+
+
+      &:focus {
+        outline: none;
+        box-shadow: none;
+      }
+    }
+
+    .btn--icon {
+      flex-shrink: 0;
+
+      @include lg-screen {
+        --size: 40px;
+      }
+
+      @include sm-screen {
+        --size: 32px;
+      }
+    }
+  }
+
+  &-watermark {
+    width: fit-content;
+    color: transparent;
+    background: linear-gradient(180deg, hsl(var(--base-two-l-300)) -161.59%, transparent 79.45%);
+    background-clip: text;
+    font-family: var(--heading-font);
+    font-size: clamp(3.5rem, 0.1073rem + 16.9635vw, 16rem);
+    font-weight: 700;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0px;
+    user-select: none;
+    text-transform: uppercase;
+    line-height: 100%;
+    white-space: nowrap;
+    z-index: -1;
+  }
+}
+
+/* ========================= Footer CSS End =========================== */

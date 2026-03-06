@@ -1,0 +1,442 @@
+/* ========================= Dashboard CSS Start ========================= */
+.dashboard {
+  $dashboard: &;
+  --sidebar-width: 320px;
+  --sidebar-offset: 24px;
+  position: relative;
+  display: flex;
+  min-height: 100dvh;
+  background-color: hsl(var(--dark));
+
+  @include xl-screen {
+    --sidebar-offset: 16px;
+    --sidebar-width: 300px;
+  }
+
+  &-sidebar {
+    width: var(--sidebar-width);
+    height: 100dvh;
+    padding: 16px;
+    transition: 0.2s linear;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    position: sticky;
+    top: 0px;
+    flex-shrink: 0;
+    background-color: hsl(var(--dark));
+
+    &::before {
+      content: '';
+      width: var(--sidebar-offset);
+      height: 100%;
+      display: inline-block;
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      bottom: 0px;
+      background-color: hsl(var(--body-bg));
+      border-top-left-radius: 16px;
+      border-bottom-left-radius: 16px;
+    }
+
+    @media screen and (min-width: 992px) {
+      padding-right: calc(var(--sidebar-offset) + 16px);
+    }
+
+    @include md-screen {
+      height: 100dvh;
+      max-height: unset;
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      z-index: 1050;
+      transform: translateX(-100%);
+      transition: transform .3s linear;
+      border-radius: 0px;
+
+      &::before {
+        display: none;
+      }
+
+      &.show {
+        transform: none !important;
+      }
+    }
+
+    &__header {
+      position: relative;
+      border-bottom: 1px solid hsl(var(--border-color)/0.1);
+      padding-bottom: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    &__body {
+      flex: 1 1 auto;
+      overflow-y: auto;
+      scrollbar-width: thin;
+      scrollbar-color: hsl(var(--white)/0.05) hsl(var(--white)/0.1);
+      border-top: 1px solid transparent;
+      margin-inline: -16px;
+      padding-inline: 16px;
+    }
+
+    &__footer {
+      border-top: 1px solid hsl(var(--border-color)/0.1);
+      padding-top: 16px;
+
+      .btn {
+        border: 1px solid hsl(var(--danger)/0.5);
+        justify-content: space-between;
+      }
+    }
+
+    &-logo {
+      width: fit-content;
+      display: block;
+
+      img {
+        width: 100%;
+        max-width: 210px;
+        display: block;
+        object-fit: cover;
+
+        @include lg-screen {
+          max-width: 180px;
+        }
+      }
+
+    }
+
+    &-menu {
+      &__item {
+        &:not(:last-child) {
+          margin-bottom: 12px;
+        }
+
+        &.logout {
+          &>a {
+            color: hsl(var(--danger));
+          }
+        }
+
+        &.active {
+          &>a {
+            color: hsl(var(--dark));
+            background-color: hsl(var(--base));
+          }
+        }
+      }
+
+      &__link {
+        width: 100%;
+        display: inline-flex;
+        align-items: center;
+        border-radius: 999px;
+        gap: 8px;
+        padding: 12px 12px 12px 24px;
+        font-size: rem(18px);
+        font-weight: 500;
+        line-height: 150%;
+        color: hsl(var(--white)/0.8);
+        letter-spacing: 1px;
+
+        @include md-screen {
+          padding: 8px 8px 8px 16px;
+        }
+
+        &[data-bs-toggle="collapse"]::after {
+          content: '\f107';
+          font-family: 'Line Awesome Free';
+          font-weight: 900;
+          margin-left: auto;
+        }
+
+        &[aria-expanded="true"]::after {
+          content: '\f106';
+        }
+
+        span {
+          @include line-clamp(1);
+        }
+
+        svg {
+          width: 1.25em;
+          height: 1.25em;
+          flex-shrink: 0;
+        }
+
+        &:hover,
+        &:focus {
+          color: hsl(var(--base));
+          background-color: hsl(var(--base)/0.1);
+        }
+      }
+    }
+
+    &-submenu {
+      margin-top: 8px;
+
+      &__item {
+        margin-bottom: 8px;
+
+        &.active {
+          >a {
+            color: hsl(var(--base));
+
+            &::before {
+              background-color: hsl(var(--base));
+            }
+          }
+        }
+      }
+
+      &__link {
+        width: 100%;
+        color: hsl(var(--white)/0.8);
+        font-weight: 500;
+        font-size: rem(18px);
+        padding: 6px 6px 6px 40px;
+        transition: .3s ease;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+
+        &::before {
+          content: '\f105';
+          font-family: 'Line Awesome Free';
+          font-weight: 900;
+          display: inline-block;
+          line-height: 100%;
+        }
+
+        svg {
+          width: 1.1em;
+          height: 1.1em;
+        }
+
+        &:hover,
+        &:focus {
+          color: hsl(var(--base));
+        }
+      }
+    }
+
+    .btn--close {
+      --size: 24px;
+      color: hsl(var(--white)/0.5);
+      background-color: hsl(var(--white)/0.1);
+
+      &:hover,
+      &:focus {
+        color: hsl(var(--white));
+        background-color: hsl(var(--white)/0.2);
+      }
+    }
+  }
+
+  &-content {
+    width: calc(100% - var(--sidebar-width));
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    background-color: hsl(var(--body-bg));
+    padding: var(--sidebar-offset);
+
+    @media screen and (min-width: 992px) {
+      padding-left: 0px;
+    }
+
+    @include md-screen {
+      width: 100%;
+    }
+  }
+
+  &-header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+
+    &__left {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      .btn {
+        font-size: calc(var(--size) * 0.5);
+      }
+    }
+
+    &__right {}
+  }
+
+  &-body {
+    flex: 1 1 100%;
+  }
+
+  &-widget {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    padding: 24px;
+    border-radius: 16px;
+    border: 1px solid hsl(var(--border-color));
+    background-color: hsl(var(--white));
+    position: relative;
+    z-index: 1;
+    gap: 16px;
+
+    @include xxl-screen {
+      padding: 16px;
+    }
+
+    &__overlay {
+      --size: 48px;
+      width: var(--size);
+      height: var(--size);
+      position: absolute;
+      font-size: calc(var(--size) * 0.8);
+      right: 8px;
+      bottom: 8px;
+      z-index: -1;
+      color: hsl(var(--base));
+      opacity: 0.2;
+
+      @include xxl-screen {
+        --size: 40px;
+      }
+
+      svg {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    &__top {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    &__icon {
+      --size: 24px;
+      width: var(--size);
+      height: var(--size);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      color: hsl(var(--dark));
+      background-color: hsl(var(--base));
+      font-size: calc(var(--size) * 0.5);
+      flex-shrink: 0;
+      transition: .3s ease;
+
+      @include xxl-screen {
+        --size: 20px;
+      }
+
+      svg {
+        width: 50%;
+        height: 50%;
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+
+    &__label {
+      font-size: rem(18px);
+      font-weight: 400;
+      color: hsl(var(--dark));
+      letter-spacing: 1px;
+
+      @include xxl-screen {
+        font-size: rem(16px);
+      }
+    }
+
+    &__arrow {
+      --size: 24px;
+      width: var(--size);
+      height: var(--size);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: auto;
+      font-size: calc(var(--size) * 0.5);
+      border: 1px solid hsl(var(--dark));
+      color: hsl(var(--dark));
+      flex-shrink: 0;
+
+      @include xxl-screen {
+        --size: 20px;
+      }
+    }
+
+    &__title {
+      color: hsl(var(--dark));
+      margin-bottom: 0px;
+    }
+
+    &:hover {
+      border-color: hsl(var(--base));
+
+      .dashboard-widget {
+        &__arrow {
+          color: hsl(var(--dark));
+          border-color: hsl(var(--base));
+          background-color: hsl(var(--base));
+        }
+      }
+    }
+  }
+
+  .dropdown--profile {
+
+    .dropdown-toggle {
+      background-color: hsl(var(--dark));
+
+      @include md-screen {
+        width: 170px;
+
+        &::after {
+          font-size: rem(14px);
+        }
+
+        &__icon {
+          --size: 30px;
+        }
+
+        &__value {
+          font-size: rem(14px);
+        }
+      }
+
+      @include msm-screen {
+        width: unset;
+      }
+    }
+
+    .dropdown-menu {
+      background-color: hsl(var(--dark));
+    }
+  }
+
+  &.v-dashboard {
+    background-color: hsl(var(--base-two));
+
+    #{$dashboard}-sidebar {
+      background-color: hsl(var(--base-two));
+    }
+  }
+}
+
+/* ========================= Dashboard CSS End =========================== */
