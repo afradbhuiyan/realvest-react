@@ -4,6 +4,7 @@ import LatestProperties from '../sections/LatestProperties'
 import AboutUs from '../sections/AboutUs'
 import FeatureProperties from '../sections/FeatureProperties'
 import OurLocation from '../sections/OurLocation'
+import Testimonial from '../sections/Testimonial'
 
 const Home = () => {
     return (
@@ -14,6 +15,7 @@ const Home = () => {
             <AboutUs />
             <FeatureProperties />
             <OurLocation />
+            <Testimonial />
         </>
     )
 }
