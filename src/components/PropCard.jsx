@@ -36,9 +36,9 @@ const PropCard = ({ id, thumb, title, price, location }) => {
                 </div>
             </div>
             <div className="prop-card__footer">
-                <a className="w-100 btn btn--base" to={`/property/${id}`}>
+                <Link className="w-100 btn btn--base" to={`/property/${id}`}>
                     View Details
-                </a>
+                </Link>
             </div>
         </div>
     )

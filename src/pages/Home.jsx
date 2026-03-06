@@ -5,6 +5,7 @@ import AboutUs from '../sections/AboutUs'
 import FeatureProperties from '../sections/FeatureProperties'
 import OurLocation from '../sections/OurLocation'
 import Testimonial from '../sections/Testimonial'
+import OurPartner from '../sections/OurPartner'
 
 const Home = () => {
     return (
@@ -16,6 +17,7 @@ const Home = () => {
             <FeatureProperties />
             <OurLocation />
             <Testimonial />
+            <OurPartner />
         </>
     )
 }
