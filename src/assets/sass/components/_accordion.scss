@@ -18,13 +18,13 @@
     }
 
     &:first-of-type .accordion-button {
-      border-top-left-radius: 999px;
-      border-top-right-radius: 999px;
+      border-top-left-radius: 999px !important;
+      border-top-right-radius: 999px !important;
     }
 
     &:last-of-type .accordion-button {
-      border-bottom-left-radius: 999px;
-      border-bottom-right-radius: 999px;
+      border-bottom-left-radius: 999px !important;
+      border-bottom-right-radius: 999px !important;
     }
   }
 

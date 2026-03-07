@@ -1,8 +1,8 @@
-import { useState } from 'react'
-import Thumb1 from '../assets/images/thumbs/why-invest/thumb1.png'
-import Thumb2 from '../assets/images/thumbs/why-invest/thumb2.png'
-import Thumb3 from '../assets/images/thumbs/why-invest/thumb3.png'
-import Thumb4 from '../assets/images/thumbs/why-invest/thumb4.png'
+import { useState } from 'react';
+import Thumb1 from '../assets/images/thumbs/why-invest/thumb1.png';
+import Thumb2 from '../assets/images/thumbs/why-invest/thumb2.png';
+import Thumb3 from '../assets/images/thumbs/why-invest/thumb3.png';
+import Thumb4 from '../assets/images/thumbs/why-invest/thumb4.png';
 
 const WhyInvest = () => {
     const [active, setActive] = useState(1);

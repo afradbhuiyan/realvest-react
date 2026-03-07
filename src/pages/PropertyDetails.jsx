@@ -1,4 +1,4 @@
-import PageBanner from '../sections/PageBanner'
+import PageBanner from '../sections/PageBanner';
 
 const PropertyDetails = () => {
     return (

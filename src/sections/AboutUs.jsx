@@ -1,6 +1,6 @@
-import { Link } from 'react-router-dom'
-import AboutThumb from '../assets/images/thumbs/about-us/thumb.png'
-import AvatarThumb from '../assets/images/thumbs/about-us/avatar.png'
+import { Link } from 'react-router-dom';
+import AboutThumb from '../assets/images/thumbs/about-us/thumb.png';
+import AvatarThumb from '../assets/images/thumbs/about-us/avatar.png';
 
 const AboutUs = () => {
     return (

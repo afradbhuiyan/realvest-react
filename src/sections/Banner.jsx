@@ -1,9 +1,9 @@
-import { useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { Fancybox } from "@fancyapps/ui";
 import Counter from '../components/Counter'
-import BannerVideo from '../assets/videos/banner/01.mp4'
-import bannerPopupThumb from '../assets/images/thumbs/banner/popup-thumb.jpg'
+import BannerVideo from '../assets/videos/banner/01.mp4';
+import bannerPopupThumb from '../assets/images/thumbs/banner/popup-thumb.jpg';
 
 const Banner = () => {
 

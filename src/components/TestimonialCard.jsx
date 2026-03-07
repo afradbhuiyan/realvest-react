@@ -1,5 +1,3 @@
-import { Link } from "react-router-dom"
-
 const TestimonialCard = ({ thumb, description, user }) => {
     return (
         <div className="testimonial-card">

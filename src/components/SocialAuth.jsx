@@ -1,7 +1,6 @@
-import React from 'react'
-import googleIcon from '../assets/images/icons/google.png'
-import facebookIcon from '../assets/images/icons/facebook.png'
-import linkedinIcon from '../assets/images/icons/linkedin.png'
+import googleIcon from '../assets/images/icons/google.png';
+import facebookIcon from '../assets/images/icons/facebook.png';
+import linkedinIcon from '../assets/images/icons/linkedin.png';
 
 const SocialAuth = () => {
     return (

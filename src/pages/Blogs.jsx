@@ -1,5 +1,4 @@
-import React from 'react'
-import PageBanner from '../sections/PageBanner'
+import PageBanner from '../sections/PageBanner';
 
 const Blogs = () => {
     return (

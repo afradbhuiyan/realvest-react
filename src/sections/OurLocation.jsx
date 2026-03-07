@@ -1,13 +1,13 @@
 import { useRef, useState } from 'react';
 import Slider from 'react-slick';
-import OurLocationCard from '../components/OurLocationCard'
+import OurLocationCard from '../components/OurLocationCard';
 
-import Thumb1 from '../assets/images/thumbs/our-location/01.png'
-import Thumb2 from '../assets/images/thumbs/our-location/02.png'
-import Thumb3 from '../assets/images/thumbs/our-location/03.png'
-import Thumb4 from '../assets/images/thumbs/our-location/04.png'
-import Thumb5 from '../assets/images/thumbs/our-location/05.png'
-import Thumb6 from '../assets/images/thumbs/our-location/06.png'
+import Thumb1 from '../assets/images/thumbs/our-location/01.png';
+import Thumb2 from '../assets/images/thumbs/our-location/02.png';
+import Thumb3 from '../assets/images/thumbs/our-location/03.png';
+import Thumb4 from '../assets/images/thumbs/our-location/04.png';
+import Thumb5 from '../assets/images/thumbs/our-location/05.png';
+import Thumb6 from '../assets/images/thumbs/our-location/06.png';
 
 const OurLocation = () => {
 

@@ -1,5 +1,4 @@
-import React, { useEffect } from 'react'
-import pageBannerBg from '../assets/images/thumbs/page-banner/bg.jpg'
+import pageBannerBg from '../assets/images/thumbs/page-banner/bg.jpg';
 
 const PageBanner = ({ title }) => {
 

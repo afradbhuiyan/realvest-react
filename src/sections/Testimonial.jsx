@@ -1,12 +1,12 @@
 import { useRef, useState } from 'react';
 import Slider from 'react-slick';
-import TestimonialCard from '../components/TestimonialCard'
+import TestimonialCard from '../components/TestimonialCard';
 
-import Thumb1 from '../assets/images/thumbs/testimonial/thumb-1.png'
-import Thumb2 from '../assets/images/thumbs/testimonial/thumb-2.png'
-import Thumb3 from '../assets/images/thumbs/testimonial/thumb-3.png'
-import Thumb4 from '../assets/images/thumbs/testimonial/thumb-4.png'
-import Thumb5 from '../assets/images/thumbs/testimonial/thumb-5.png'
+import Thumb1 from '../assets/images/thumbs/testimonial/thumb-1.png';
+import Thumb2 from '../assets/images/thumbs/testimonial/thumb-2.png';
+import Thumb3 from '../assets/images/thumbs/testimonial/thumb-3.png';
+import Thumb4 from '../assets/images/thumbs/testimonial/thumb-4.png';
+import Thumb5 from '../assets/images/thumbs/testimonial/thumb-5.png';
 
 const Testimonial = () => {
 

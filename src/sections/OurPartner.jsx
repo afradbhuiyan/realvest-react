@@ -1,17 +1,16 @@
-import { useRef, useState } from 'react';
 import Slider from 'react-slick';
 
-import Logo1 from '../assets/images/thumbs/our-partner/logo-1.png'
-import Logo2 from '../assets/images/thumbs/our-partner/logo-2.png'
-import Logo3 from '../assets/images/thumbs/our-partner/logo-3.png'
-import Logo4 from '../assets/images/thumbs/our-partner/logo-4.png'
-import Logo5 from '../assets/images/thumbs/our-partner/logo-5.png'
-import Logo6 from '../assets/images/thumbs/our-partner/logo-6.png'
-import Logo7 from '../assets/images/thumbs/our-partner/logo-7.png'
-import Logo8 from '../assets/images/thumbs/our-partner/logo-8.png'
-import Logo9 from '../assets/images/thumbs/our-partner/logo-9.png'
-import Logo10 from '../assets/images/thumbs/our-partner/logo-10.png'
-import Logo11 from '../assets/images/thumbs/our-partner/logo-11.png'
+import Logo1 from '../assets/images/thumbs/our-partner/logo-1.png';
+import Logo2 from '../assets/images/thumbs/our-partner/logo-2.png';
+import Logo3 from '../assets/images/thumbs/our-partner/logo-3.png';
+import Logo4 from '../assets/images/thumbs/our-partner/logo-4.png';
+import Logo5 from '../assets/images/thumbs/our-partner/logo-5.png';
+import Logo6 from '../assets/images/thumbs/our-partner/logo-6.png';
+import Logo7 from '../assets/images/thumbs/our-partner/logo-7.png';
+import Logo8 from '../assets/images/thumbs/our-partner/logo-8.png';
+import Logo9 from '../assets/images/thumbs/our-partner/logo-9.png';
+import Logo10 from '../assets/images/thumbs/our-partner/logo-10.png';
+import Logo11 from '../assets/images/thumbs/our-partner/logo-11.png';
 
 const OurPartner = () => {
 

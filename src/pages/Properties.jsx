@@ -1,6 +1,5 @@
-import React from 'react'
-import Banner from '../sections/Banner'
-import PageBanner from '../sections/PageBanner'
+import Banner from '../sections/Banner';
+import PageBanner from '../sections/PageBanner';
 
 const Properties = () => {
     return (

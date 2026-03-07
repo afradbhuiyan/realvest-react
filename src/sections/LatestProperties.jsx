@@ -1,8 +1,8 @@
-import { Link } from 'react-router-dom'
-import Thumb1 from '../assets/images/thumbs/properties/thumb-1.png'
-import Thumb2 from '../assets/images/thumbs/properties/thumb-2.png'
-import Thumb3 from '../assets/images/thumbs/properties/thumb-3.png'
-import PropCard from '../components/PropCard'
+import { Link } from 'react-router-dom';
+import Thumb1 from '../assets/images/thumbs/properties/thumb-1.png';
+import Thumb2 from '../assets/images/thumbs/properties/thumb-2.png';
+import Thumb3 from '../assets/images/thumbs/properties/thumb-3.png';
+import PropCard from '../components/PropCard';
 
 const LatestProperties = () => {
 

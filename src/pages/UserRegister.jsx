@@ -1,6 +1,5 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import SocialAuth from '../components/SocialAuth'
+import { Link } from 'react-router-dom';
+import SocialAuth from '../components/SocialAuth';
 
 const UserRegister = () => {
     return (

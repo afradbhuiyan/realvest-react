@@ -1,9 +1,9 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef } from 'react';
 import Offcanvas from 'react-bootstrap/Offcanvas';
-import { NavLink, Link } from 'react-router-dom'
-import Logo from '../../assets/images/logo/logo.png'
-import LogoDark from '../../assets/images/logo/logo-dark.png'
-import AuthSwitcher from '../AuthSwitcher'
+import { NavLink, Link } from 'react-router-dom';
+import Logo from '../../assets/images/logo/logo.png';
+import LogoDark from '../../assets/images/logo/logo-dark.png';
+import AuthSwitcher from '../AuthSwitcher';
 
 const Header = () => {
     const headerRef = useRef();

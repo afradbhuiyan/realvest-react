@@ -1,10 +1,9 @@
-import React from 'react'
-import { Link, Outlet, useLocation } from 'react-router-dom'
-import AuthSwitcher from '../components/AuthSwitcher'
-import userAccountThumb from '../assets/images/thumbs/account/thumb.jpg'
-import vendorAccountThumb from '../assets/images/thumbs/account/thumb2.jpg'
-import avatarGroupThumb from '../assets/images/thumbs/account/avatar-group.png'
-import LogoDark from '../assets/images/logo/logo-dark.png'
+import { Link, Outlet, useLocation } from 'react-router-dom';
+import AuthSwitcher from '../components/AuthSwitcher';
+import userAccountThumb from '../assets/images/thumbs/account/thumb.jpg';
+import vendorAccountThumb from '../assets/images/thumbs/account/thumb2.jpg';
+import avatarGroupThumb from '../assets/images/thumbs/account/avatar-group.png';
+import LogoDark from '../assets/images/logo/logo-dark.png';
 
 const AccountLayout = () => {
 

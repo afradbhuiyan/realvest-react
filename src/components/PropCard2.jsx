@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom"
+import { Link } from 'react-router-dom';
 
 const PropCard2 = ({ id, thumb, title, price, location }) => {
     return (
