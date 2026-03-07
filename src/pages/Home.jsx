@@ -7,6 +7,7 @@ import OurLocation from '../sections/OurLocation';
 import Testimonial from '../sections/Testimonial';
 import OurPartner from '../sections/OurPartner';
 import FAQ from '../sections/FAQ';
+import Blog from '../sections/Blog';
 
 const Home = () => {
     return (
@@ -20,6 +21,7 @@ const Home = () => {
             <Testimonial />
             <OurPartner />
             <FAQ />
+            <Blog />
         </>
     )
 }
