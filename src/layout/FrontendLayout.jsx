@@ -8,8 +8,8 @@ const FrontendLayout = () => {
             <Header />
             <main className="page-wrapper">
                 <Outlet />
+                <Footer />
             </main>
-            <Footer />
         </>
     )
 }
