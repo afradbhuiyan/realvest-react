@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import pageBannerBg from '../assets/images/thumbs/page-banner/bg.jpg';
 
 const PageBanner = ({ title }) => {
@@ -15,10 +16,10 @@ const PageBanner = ({ title }) => {
                 <h3 className="page-banner__title">{title}</h3>
                 <ul className="breadcrumb custom--breadcrumb">
                     <li className="breadcrumb-item">
-                        <a href="index.html">
+                        <Link to="/">
                             <i className="las la-home"></i>
                             Home
-                        </a>
+                        </Link>
                     </li>
                     <li className="breadcrumb-item active" aria-current="page">
                         {title}

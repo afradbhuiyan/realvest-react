@@ -49,24 +49,6 @@ const Blog = () => {
                             <BlogCard id={id} thumb={thumb} title={title} />
                         </div>
                     ))}
-                    {/* <div className="col-sm-6 col-lg-4 wow fadeInUp" data-wow-delay="300ms">
-                        @@include('../components/_blog-card.html', {
-                            'thumb': 'assets/images/thumbs/blog/thumb-1.jpg',
-                            'title': 'AI tools for business strategy that ship tomorrow'
-                        })
-                    </div>
-                    <div className="col-sm-6 col-lg-4 wow fadeInUp" data-wow-delay="400ms">
-                        @@include('../components/_blog-card.html', {
-                            'thumb': 'assets/images/thumbs/blog/thumb-2.jpg',
-                            'title': 'AI strategy for business leaders who hate AI'
-                        })
-                    </div>
-                    <div className="col-sm-6 col-lg-4 wow fadeInUp" data-wow-delay="400ms">
-                        @@include('../components/_blog-card.html', {
-                            'thumb': 'assets/images/thumbs/blog/thumb-3.jpg',
-                            'title': 'How can I use AI to automate repetitive tasks my team hates'
-                        })
-                    </div> */}
                 </div>
             </div>
         </section>
