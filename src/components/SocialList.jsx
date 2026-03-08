@@ -1,6 +1,6 @@
-const SocialList = ({ style = '' }) => {
+const SocialList = ({ className = '', ...props }) => {    
     return (
-        <ul className={`social-list ${style}`}>
+        <ul className={`social-list ${className}`} {...props}>
             <li className="social-list__item">
                 <a className="social-list__link" to="https://facebook.com" target="_blank">
                     <i className="fab fa-facebook-f"></i>
