@@ -1,0 +1,92 @@
+[
+    {
+        "id": 1,
+        "video": "https://www.youtube.com/embed/WDQ0cPwHYDA",
+        "thumb": [
+            "/realvest-react/images/properties/thumb-1.png",
+            "/realvest-react/images/properties/thumb-2.png",
+            "/realvest-react/images/properties/thumb-3.png",
+            "/realvest-react/images/properties/thumb-4.png",
+            "/realvest-react/images/properties/thumb-5.png",
+            "/realvest-react/images/properties/thumb-6.png"
+        ],
+        "title": "Luxury Condominiums",
+        "price": "$12,000.00",
+        "location": "New York, USA"
+    },
+    {
+        "id": 2,
+        "video": "https://www.youtube.com/embed/WDQ0cPwHYDA",
+        "thumb": [
+            "/realvest-react/images/properties/thumb-2.png",
+            "/realvest-react/images/properties/thumb-1.png",
+            "/realvest-react/images/properties/thumb-3.png",
+            "/realvest-react/images/properties/thumb-4.png",
+            "/realvest-react/images/properties/thumb-5.png",
+            "/realvest-react/images/properties/thumb-6.png"
+        ],
+        "title": "Traditional Machiya Townhouse",
+        "price": "$20,000.00",
+        "location": "San Francisco, USA"
+    },
+    {
+        "id": 3,
+        "video": "https://www.youtube.com/embed/WDQ0cPwHYDA",
+        "thumb": [
+            "/realvest-react/images/properties/thumb-3.png",
+            "/realvest-react/images/properties/thumb-1.png",
+            "/realvest-react/images/properties/thumb-2.png",
+            "/realvest-react/images/properties/thumb-4.png",
+            "/realvest-react/images/properties/thumb-5.png",
+            "/realvest-react/images/properties/thumb-6.png"
+        ],
+        "title": "Elite Horizon",
+        "price": "$25,000.00",
+        "location": "Tokyo, Japan"
+    },
+    {
+        "id": 4,
+        "video": "https://www.youtube.com/embed/WDQ0cPwHYDA",
+        "thumb": [
+            "/realvest-react/images/properties/thumb-4.png",
+            "/realvest-react/images/properties/thumb-1.png",
+            "/realvest-react/images/properties/thumb-2.png",
+            "/realvest-react/images/properties/thumb-3.png",
+            "/realvest-react/images/properties/thumb-5.png",
+            "/realvest-react/images/properties/thumb-6.png"
+        ],
+        "title": "Oceanview Residences",
+        "price": "$18,500.00",
+        "location": "Miami, USA"
+    },
+    {
+        "id": 5,
+        "video": "https://www.youtube.com/embed/WDQ0cPwHYDA",
+        "thumb": [
+            "/realvest-react/images/properties/thumb-5.png",
+            "/realvest-react/images/properties/thumb-1.png",
+            "/realvest-react/images/properties/thumb-2.png",
+            "/realvest-react/images/properties/thumb-3.png",
+            "/realvest-react/images/properties/thumb-4.png",
+            "/realvest-react/images/properties/thumb-6.png"
+        ],
+        "title": "Skyline Penthouse",
+        "price": "$35,000.00",
+        "location": "Dubai, UAE"
+    },
+    {
+        "id": 6,
+        "video": "https://www.youtube.com/embed/WDQ0cPwHYDA",
+        "thumb": [
+            "/realvest-react/images/properties/thumb-6.png",
+            "/realvest-react/images/properties/thumb-1.png",
+            "/realvest-react/images/properties/thumb-2.png",
+            "/realvest-react/images/properties/thumb-3.png",
+            "/realvest-react/images/properties/thumb-4.png",
+            "/realvest-react/images/properties/thumb-5.png"
+        ],
+        "title": "Green Valley Villas",
+        "price": "$22,000.00",
+        "location": "Bali, Indonesia"
+    }
+]
