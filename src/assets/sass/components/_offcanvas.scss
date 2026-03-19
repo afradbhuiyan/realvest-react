@@ -66,14 +66,12 @@
     }
 
     .offcanvas-header {
+        display: flex !important;
+        align-items: center;
+        justify-content: space-between;
         padding: 0px;
         padding-bottom: 8px;
         border-bottom: 1px solid hsl(var(--border-color));
-
-        @media screen and (min-width: 992px) {
-            display: flex;
-            align-items: center;
-        }
     }
 
     .offcanvas-body {

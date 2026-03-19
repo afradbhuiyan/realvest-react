@@ -10,9 +10,10 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 import "@fancyapps/ui/dist/fancybox/fancybox.css";
 import './assets/sass/main.scss';
 
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-      <RouterProvider router={router} />,
+    <RouterProvider router={router} />,
   </StrictMode>
 )
 
