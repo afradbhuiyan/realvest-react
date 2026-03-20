@@ -1,34 +1,18 @@
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import Thumb1 from '../assets/images/thumbs/properties/thumb-1.png';
-import Thumb2 from '../assets/images/thumbs/properties/thumb-2.png';
-import Thumb3 from '../assets/images/thumbs/properties/thumb-3.png';
 import PropCard from '../components/PropCard';
+import NoDataFound from '../components/NoDataFound';
 
 const LatestProperties = () => {
 
-    const properties = [
-        {
-            id: 1,
-            thumb: Thumb1,
-            title: 'Luxury Condominiums',
-            price: '$12,000.00',
-            location: 'New York, USA',
-        },
-        {
-            id: 2,
-            thumb: Thumb2,
-            title: 'Traditional Machiya Townhouse',
-            price: '$20,000.00',
-            location: 'San Francisco, USA',
-        },
-        {
-            id: 3,
-            thumb: Thumb3,
-            title: 'Elite Horizon',
-            price: '$25,000.00',
-            location: 'Tokyo, Japan',
-        },
-    ]
+
+    const [properties, setProperties] = useState([]);
+
+    useEffect(() => {
+        fetch('/realvest-react/data/properties.json')
+            .then(res => res.json())
+            .then(data => setProperties(data));
+    }, []);
 
     return (
         <section className="latest-prop py-120">
@@ -62,17 +46,22 @@ const LatestProperties = () => {
                     </div>
                 </div>
                 <div className="row justify-content-center gy-4 gy-xl-0">
-                    {properties.map(({ id, thumb, title, price, location }) => (
-                        <div key={id} className="col-md-6 col-xl-4">
-                            <PropCard
-                                id={id}
-                                thumb={thumb}
-                                title={title}
-                                price={price}
-                                location={location}
-                            />
+                    {properties.length ?
+                         properties.slice(0, 3).map(({ id, thumb, title, price, location }) => (
+                            <div key={id} className="col-md-6 col-xl-4">
+                                <PropCard
+                                    id={id}
+                                    thumb={thumb[0]}
+                                    title={title}
+                                    price={price}
+                                    location={location}
+                                />
+                            </div>
+                        )) :
+                        <div className="col-12">
+                            <NoDataFound />
                         </div>
-                    ))}
+                    }
                 </div>
             </div>
         </section>

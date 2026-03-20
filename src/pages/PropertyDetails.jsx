@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Fancybox } from "@fancyapps/ui";
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import Modal from 'react-bootstrap/Modal';
 
 import PageBanner from '../sections/PageBanner';
@@ -9,16 +9,7 @@ import CopyInput from '../components/CopyInput';
 import ToggleEl from '../components/ToggleEl';
 
 import VideoThumb from '../assets/images/thumbs/prop-details/video-thumb.jpg';
-import Thumb1 from '../assets/images/thumbs/properties/thumb-1.png';
-import Thumb2 from '../assets/images/thumbs/properties/thumb-2.png';
-import Thumb3 from '../assets/images/thumbs/properties/thumb-3.png';
-import Thumb4 from '../assets/images/thumbs/properties/thumb-4.png';
-import Thumb5 from '../assets/images/thumbs/properties/thumb-5.png';
-import Thumb6 from '../assets/images/thumbs/properties/thumb-6.png';
-import ThumbSm1 from '../assets/images/thumbs/properties/thumb-sm-1.png';
-import ThumbSm2 from '../assets/images/thumbs/properties/thumb-sm-2.png';
-import ThumbSm3 from '../assets/images/thumbs/properties/thumb-sm-3.png';
-import ThumbSm4 from '../assets/images/thumbs/properties/thumb-sm-4.png';
+
 
 import InvestTypeIcon from '../assets/images/icons/invest_type.png';
 import ProfitIcon from '../assets/images/icons/profit.png';
@@ -36,6 +27,7 @@ import PropertyDetailsPricingCard from '../components/PropertyDetailsPricingCard
 
 
 const PropertyDetails = () => {
+    const { id } = useParams();
 
     const breakpoint = 992;
     const [show, setShow] = useState(false);
@@ -43,6 +35,20 @@ const PropertyDetails = () => {
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+    const [loading, setLoading] = useState(true);
+
+    const [property, setProperty] = useState({});
+
+    useEffect(() => {
+        fetch('/realvest-react/data/properties.json')
+            .then(res => res.json())
+            .then(data => {
+                const found = data.find(item => item.id == id);
+                setProperty(found);
+                setLoading(false);
+            });
+    }, [id]);
+
 
     useEffect(() => {
         Fancybox.bind('[data-fancybox="gallery"]', {
@@ -69,7 +75,6 @@ const PropertyDetails = () => {
 
         return () => window.removeEventListener("resize", handleResize);
     }, []);
-
     return (
         <>
             <PageBanner title="Properties Details" />
@@ -77,58 +82,46 @@ const PropertyDetails = () => {
                 <div className="container">
                     <div className="prop-details__header">
                         <div className="prop-details-gallary">
-                            <div className="prop-details-gallary__item">
-                                <a className="prop-details-gallary__video" href="https://www.youtube.com/embed/WDQ0cPwHYDA"
-                                    data-fancybox="gallery">
-                                    <img src={VideoThumb} alt="" />
-                                    <button className="prop-details-gallary__video-play" type="button">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                            fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"
-                                            strokeLinejoin="round" className="lucide lucide-play-icon lucide-play">
-                                            <path
-                                                d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z">
-                                            </path>
-                                        </svg>
-                                    </button>
-                                </a>
-                            </div>
-                            <div className="prop-details-gallary__item">
-                                <a className="prop-details-gallary__thumb" href={Thumb1}
-                                    data-fancybox="gallery">
-                                    <img src={Thumb1} alt="" />
-                                </a>
-                            </div>
-                            <div className="prop-details-gallary__item">
-                                <a className="prop-details-gallary__thumb" href={Thumb2}
-                                    data-fancybox="gallery">
-                                    <img src={Thumb2} alt="" />
-                                </a>
-                            </div>
-                            <div className="prop-details-gallary__item">
-                                <a className="prop-details-gallary__thumb" href={Thumb3}
-                                    data-fancybox="gallery">
-                                    <img src={Thumb3} alt="" />
-                                </a>
-                            </div>
-                            <div className="prop-details-gallary__item">
-                                <a className="prop-details-gallary__thumb" href={Thumb4}
-                                    data-fancybox="gallery" data-view-more="+2">
-                                    <img src={Thumb4} alt="" />
-                                </a>
-                            </div>
-                            <div className="prop-details-gallary__item d-none">
-                                <a className="prop-details-gallary__thumb" href={Thumb5}
-                                    data-fancybox="gallery">
-                                    <img src={Thumb5} alt="" />
-                                </a>
-                            </div>
-                            <div className="prop-details-gallary__item d-none">
-                                <a className="prop-details-gallary__thumb" href={Thumb6}
-                                    data-fancybox="gallery">
-                                    <img src={Thumb6} alt="" />
-                                </a>
-                            </div>
-
+                            {property.video &&
+                                <div className="prop-details-gallary__item">
+                                    <a className="prop-details-gallary__video" href="https://www.youtube.com/embed/WDQ0cPwHYDA"
+                                        data-fancybox="gallery">
+                                        <img src={VideoThumb} alt="" />
+                                        <button className="prop-details-gallary__video-play" type="button">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                                fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"
+                                                strokeLinejoin="round" className="lucide lucide-play-icon lucide-play">
+                                                <path
+                                                    d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z">
+                                                </path>
+                                            </svg>
+                                        </button>
+                                    </a>
+                                </div>
+                            }
+                            {!loading &&
+                                property.thumb.map((thumb, index) => {
+                                    if (property.thumb.length > 4 && index == 3) {
+                                        return (
+                                            <div className={`prop-details-gallary__item ${index > 3 ? 'd-none' : ''}`}>
+                                                <a className="prop-details-gallary__thumb" href={thumb}
+                                                    data-fancybox="gallery" data-view-more={`+${property.thumb.length - 4}`}>
+                                                    <img src={thumb} alt="" />
+                                                </a>
+                                            </div>
+                                        )
+                                    } else {
+                                        return (
+                                            <div className={`prop-details-gallary__item ${index > 3 ? 'd-none' : ''}`}>
+                                                <a className="prop-details-gallary__thumb" href={thumb}
+                                                    data-fancybox="gallery">
+                                                    <img src={thumb} alt="" />
+                                                </a>
+                                            </div>
+                                        )
+                                    }
+                                })
+                            }
                         </div>
                     </div>
                     <div className="prop-details__body">
@@ -556,7 +549,7 @@ const PropertyDetails = () => {
                                                         <ul className="prop-details-latest">
                                                             <li className="prop-details-latest-item">
                                                                 <img className="prop-details-latest-item__thumb"
-                                                                    src={ThumbSm1}
+                                                                    src="/realvest-react/images/properties/thumb-sm-1.png"
                                                                     alt="Property-image" />
 
                                                                 <div className="prop-details-latest-item__content">
@@ -584,7 +577,7 @@ const PropertyDetails = () => {
                                                             </li>
                                                             <li className="prop-details-latest-item">
                                                                 <img className="prop-details-latest-item__thumb"
-                                                                    src={ThumbSm2}
+                                                                    src="/realvest-react/images/properties/thumb-sm-2.png"
                                                                     alt="Property-image" />
 
                                                                 <div className="prop-details-latest-item__content">
@@ -612,7 +605,7 @@ const PropertyDetails = () => {
                                                             </li>
                                                             <li className="prop-details-latest-item">
                                                                 <img className="prop-details-latest-item__thumb"
-                                                                    src={ThumbSm3}
+                                                                    src="/realvest-react/images/properties/thumb-sm-3.png"
                                                                     alt="Property-image" />
                                                                 <div className="prop-details-latest-item__content">
                                                                     <h6 className="prop-details-latest-item__title">
@@ -639,7 +632,7 @@ const PropertyDetails = () => {
                                                             </li>
                                                             <li className="prop-details-latest-item">
                                                                 <img className="prop-details-latest-item__thumb"
-                                                                    src={ThumbSm4}
+                                                                    src="/realvest-react/images/properties/thumb-sm-4.png"
                                                                     alt="Property-image" />
 
                                                                 <div className="prop-details-latest-item__content">
