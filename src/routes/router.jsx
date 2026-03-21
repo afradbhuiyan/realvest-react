@@ -10,10 +10,13 @@ import About from '../pages/About';
 import Blogs from '../pages/Blogs';
 import BlogDetails from '../pages/BlogDetails';
 import Contact from '../pages/Contact';
-import UserLogin from '../pages/UserLogin';
-import UserRegister from '../pages/UserRegister';
-import VendorLogin from '../pages/VendorLogin';
-import VendorRegister from '../pages/VendorRegister';
+import UserLogin from '../pages/User/Login';
+import UserRegister from '../pages/User/Register';
+import UserDashboard from '../pages/User/Dashboard';
+import UserInvestHistory from '../pages/User/InvestHistory';
+import UserProfitHistory from '../pages/User/ProfitHistory';
+import VendorLogin from '../pages/Vendor/Login';
+import VendorRegister from '../pages/Vendor/Register';
 
 export const router = createBrowserRouter([
     {
@@ -37,13 +40,14 @@ export const router = createBrowserRouter([
                 children: [
                     { path: 'login', element: <UserLogin /> },
                     { path: 'register', element: <UserRegister /> },
-                    { path: 'dashboard', element: <h1>Dashboard</h1> }
                 ]
             },
             {
                 element: <DashboardLayout />,
                 children: [
-                    { path: 'dashboard', element: <h1>Dashboard</h1> }
+                    { path: 'dashboard', element: <UserDashboard /> },
+                    { path: 'invest-history', element: <UserInvestHistory /> },
+                    { path: 'profit-history', element: <UserProfitHistory /> },
                 ]
             }
         ]

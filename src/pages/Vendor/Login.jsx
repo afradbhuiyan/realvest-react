@@ -1,14 +1,12 @@
 import { Link } from 'react-router-dom';
-import SocialAuth from '../components/SocialAuth';
 
-const UserLogin = () => {
+const VendorLogin = () => {
     return (
         <div className="account-card">
             <div className="account-card__header">
                 <h5 className="account-card__title">Account Login</h5>
-                <p className="account-card__desc">
-                    Login in to continue your property search and manage your dashboard.
-                </p>
+                <p className="account-card__desc">Login in to continue your property search and manage your
+                    dashboard.</p>
             </div>
             <div className="account-card__body">
                 <form className="account-form" action="">
@@ -44,16 +42,12 @@ const UserLogin = () => {
                         </div>
                     </div>
                 </form>
-                <div className="account-divider">
-                    <span>Or</span>
-                </div>
-                <SocialAuth />
                 <p className="account-info">
-                    Don't have an account? <Link to="/user/register">Sign Up</Link>
+                    Don't have an account? <Link to="/vendor/register">Sign Up</Link>
                 </p>
             </div>
         </div>
     )
 }
 
-export default UserLogin
+export default VendorLogin

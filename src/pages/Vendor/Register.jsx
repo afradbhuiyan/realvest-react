@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
-import SocialAuth from '../components/SocialAuth';
 
-const UserRegister = () => {
+const VendorRegister = () => {
     return (
         <div className="account-card">
             <div className="account-card__header">
@@ -65,16 +64,12 @@ const UserRegister = () => {
                     </div>
 
                 </form>
-                <div className="account-divider">
-                    <span>Or</span>
-                </div>
-                <SocialAuth />
                 <p className="account-info">
-                    Already have an account? <Link to="/user/login">Sign In</Link>
+                    Already have an account? <Link to="/vendor/login">Sign In</Link>
                 </p>
             </div>
         </div>
     )
 }
 
-export default UserRegister
+export default VendorRegister
