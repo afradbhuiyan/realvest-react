@@ -1,6 +1,7 @@
 import Dropdown from 'react-bootstrap/Dropdown';
+import { Link } from 'react-router-dom';
 
-const DropdownProfile = () => {
+const DropdownProfile = ({ logout }) => {
     return (
         <>
 
@@ -37,7 +38,7 @@ const DropdownProfile = () => {
                         </div>
                     </div>
                     <div className="dropdown-menu__body">
-                        <Dropdown.Item className="dropdown-item" href="dashboard.html">
+                        <Link className="dropdown-item" to="/user/dashboard">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                                 stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
                                 className="lucide lucide-layout-dashboard-icon lucide-layout-dashboard">
@@ -47,8 +48,8 @@ const DropdownProfile = () => {
                                 <rect width="7" height="5" x="3" y="16" rx="1" />
                             </svg>
                             <span className="text">Dashboard</span>
-                        </Dropdown.Item>
-                        <Dropdown.Item className="dropdown-item" href="profile.html">
+                        </Link>
+                        <Link className="dropdown-item" href="profile.html">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path
                                     d="M15 9C15 7.34315 13.6569 6 12 6C10.3431 6 9 7.34315 9 9C9 10.6569 10.3431 12 12 12C13.6569 12 15 10.6569 15 9Z"
@@ -62,8 +63,8 @@ const DropdownProfile = () => {
                                     strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"></path>
                             </svg>
                             <span className="text">Profile Setting</span>
-                        </Dropdown.Item>
-                        <Dropdown.Item className="dropdown-item" href="change-password.html">
+                        </Link>
+                        <Link className="dropdown-item" href="change-password.html">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path
                                     d="M4.26781 18.8447C4.49269 20.515 5.87613 21.8235 7.55966 21.9009C8.97627 21.966 10.4153 22 12 22C13.5847 22 15.0237 21.966 16.4403 21.9009C18.1239 21.8235 19.5073 20.515 19.7322 18.8447C19.879 17.7547 20 16.6376 20 15.5C20 14.3624 19.879 13.2453 19.7322 12.1553C19.5073 10.485 18.1239 9.17649 16.4403 9.09909C15.0237 9.03397 13.5847 9 12 9C10.4153 9 8.97627 9.03397 7.55966 9.09909C5.87613 9.17649 4.49269 10.485 4.26781 12.1553C4.12105 13.2453 4 14.3624 4 15.5C4 16.6376 4.12105 17.7547 4.26781 18.8447Z"
@@ -79,8 +80,8 @@ const DropdownProfile = () => {
                                     strokeLinejoin="round"></path>
                             </svg>
                             <span className="text">Change Password</span>
-                        </Dropdown.Item>
-                        <Dropdown.Item className="dropdown-item" href="#">
+                        </Link>
+                        <Link className="dropdown-item" href="#">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                                 className="injected-svg" role="img" color="currentColor">
                                 <path
@@ -89,8 +90,8 @@ const DropdownProfile = () => {
                                 </path>
                             </svg>
                             <span className="text">Support Tickets</span>
-                        </Dropdown.Item>
-                        <Dropdown.Item className="dropdown-item logout" href="#">
+                        </Link>
+                        <a className="dropdown-item logout" href="javascript:void(0);" onClick={() => logout()}>
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path
                                     d="M15 17.625C14.9264 19.4769 13.3831 21.0494 11.3156 20.9988C10.8346 20.987 10.2401 20.8194 9.05112 20.484C6.18961 19.6768 3.70555 18.3203 3.10956 15.2815C3 14.723 3 14.0944 3 12.8373V11.1627C3 9.90561 3 9.27705 3.10956 8.71846C3.70555 5.67965 6.18961 4.32316 9.05112 3.51603C10.2401 3.18064 10.8346 3.01295 11.3156 3.00119C13.3831 2.95061 14.9264 4.52307 15 6.37501"
@@ -100,7 +101,7 @@ const DropdownProfile = () => {
                                     stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                             </svg>
                             <span className="text">Logout</span>
-                        </Dropdown.Item>
+                        </a>
                     </div>
                 </Dropdown.Menu>
             </Dropdown>

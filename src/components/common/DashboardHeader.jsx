@@ -1,6 +1,9 @@
+import { useAuth } from '../../context/AuthContext';
 import DropdownProfile from "../DropdownProfile";
 
 const DashboardHeader = ({ dashboardSidebarIsOpen, setDashboardSidebarIsOpen }) => {
+    const { isAuth, logout } = useAuth();
+
     return (
         <>
             <div className="dashboard-header">
@@ -15,7 +18,7 @@ const DashboardHeader = ({ dashboardSidebarIsOpen, setDashboardSidebarIsOpen }) 
                     <h5 className="dashboard-title">Dashboard</h5>
                 </div>
                 <div className="dashboard-header__right">
-                    <DropdownProfile />
+                    <DropdownProfile logout={logout} />
                 </div>
             </div>
         </>

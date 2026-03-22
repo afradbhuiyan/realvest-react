@@ -9,11 +9,14 @@ import 'line-awesome/dist/line-awesome/css/line-awesome.min.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import "@fancyapps/ui/dist/fancybox/fancybox.css";
 import './assets/sass/main.scss';
+import { AuthProvider } from './context/AuthContext.jsx';
 
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
   </StrictMode>
 )
 

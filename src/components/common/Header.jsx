@@ -1,14 +1,18 @@
-import { useState, useEffect, useRef } from 'react';
 import Offcanvas from 'react-bootstrap/Offcanvas';
+import { useState, useEffect, useRef } from 'react';
 import { NavLink, Link } from 'react-router-dom';
+import { useAuth } from '../../context/AuthContext';
+import AuthSwitcher from '../AuthSwitcher';
+import DropdownProfile from '../DropdownProfile';
+
 import Logo from '../../assets/images/logo/logo.png';
 import LogoDark from '../../assets/images/logo/logo-dark.png';
-import AuthSwitcher from '../AuthSwitcher';
 
 const Header = () => {
     const headerRef = useRef();
     const [show, setShow] = useState(false);
     const [isFixed, setIsFixed] = useState(false);
+    const { isAuth, logout } = useAuth();
 
     useEffect(() => {
         const header = headerRef.current;
@@ -25,7 +29,7 @@ const Header = () => {
                 setIsFixed(false);
             }
         }
-        
+
         window.addEventListener('scroll', handleScroll);
         return () => {
             window.removeEventListener('scroll', handleScroll);
@@ -49,7 +53,6 @@ const Header = () => {
                             <a className="navbar-brand logo" href="index.html">
                                 <img src={LogoDark} alt="" />
                             </a>
-                            {/* <button type="button" className="btn btn--icon btn--close" data-bs-dismiss="offcanvas"></button> */}
                         </Offcanvas.Header>
                         <Offcanvas.Body className="offcanvas-body align-items-center">
                             <ul className="navbar-nav nav-menu mx-auto align-items-lg-center">
@@ -85,7 +88,7 @@ const Header = () => {
                         <i className="las la-bars"></i>
                     </button>
                     <div className="navbar-action order-2 order-lg-3 ms-auto ms-lg-0">
-                        <AuthSwitcher />
+                        {!isAuth ? <AuthSwitcher /> : <DropdownProfile logout={logout} />}
                     </div>
                 </nav>
             </div>

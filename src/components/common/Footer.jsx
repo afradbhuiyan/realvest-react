@@ -2,15 +2,19 @@ import { Link } from 'react-router-dom';
 import Logo from '../../assets/images/logo/logo.png';
 import SocialList from '../SocialList';
 import DropdownLang from '../DropdownLang';
+import { useAuth } from '../../context/AuthContext';
 
 const Footer = () => {
+    const { isAuth } = useAuth();
+
+    console.log('Footer ' + isAuth);
+
     return (
         <footer className="footer">
             <div className="container">
                 <div className="footer-top">
                     <SocialList />
                     <DropdownLang />
-                    {/* @@include('../components/_dropdown-lang.html') */}
                 </div>
                 <div className="footer-main">
                     <div className="row gy-4">
